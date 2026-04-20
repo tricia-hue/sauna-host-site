@@ -29,7 +29,7 @@ export default function Lesson5Page() {
             <p className="eyebrow mb-4">Pick your theme</p>
             <h2 className="font-display text-display-md uppercase tracking-heading text-peach leading-tight">
               One method.<br />
-              Four gatherings.
+              Five gatherings.
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-0 border-t border-peach/15">

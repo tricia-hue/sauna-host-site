@@ -152,11 +152,11 @@ export const lessons: Lesson[] = [
     headline: "Pick your theme",
     subhead: "Your first gathering, planned today.",
     openReadingLine:
-      "Pick your theme — women's circle, men's gathering, milestone, or book club — and walk away with a full 90-minute plan.",
+      "Pick your theme — women's circle, men's gathering, milestone, book club, or couples — and walk away with a full 90-minute plan.",
     practicePrompt: "Text one person today.",
     practiceInstruction:
       "Text one person right now — today — and tell them you want to host a gathering. Don't wait until you feel ready. You'll feel more ready after you've told one person out loud.",
-    workbookPageRef: "Pages 5–8 — Your Four Themes",
+    workbookPageRef: "Pages 5–9 — Your Five Themes",
     invitationToNext:
       "You have everything you need. Host your first gathering. Then come back and tell me how it went — I read every email. In a few days, I'll send you one more thing — the real secret behind what makes this work.",
     gated: true,
@@ -178,7 +178,8 @@ export const lessons: Lesson[] = [
       "**Men's Gathering** — 4–6 men, depth without agenda, what men's retreats gesture at but rarely deliver.",
       "**Milestone Celebration** — a birthday, bachelorette, anniversary, or big threshold done differently.",
       "**Book Club** — the gathering where the book becomes the excuse to finally talk about what actually matters.",
-      "Inside your workbook, Day 5's pages are four full gathering plans — one per theme. Pick yours today.",
+      "**Couples** — 2–3 couples, date night reimagined — the together-practice that rebuilds presence and gives relationships a shared ritual.",
+      "Inside your workbook, Day 5's pages are five full gathering plans — one per theme. Pick yours today.",
       "Each plan includes the invitation script (what to text your people), the flow (timings for arrival, sauna round 1, plunge, integration, sauna round 2, close), 10 conversation prompts designed for that theme, the playlist suggestion, and the \"what to text the group afterward\" script.",
       "### What to do next",
       "Pick a date in the next 2–4 weeks. Text your list of people today. Use the invitation script from your chosen theme's workbook page.",

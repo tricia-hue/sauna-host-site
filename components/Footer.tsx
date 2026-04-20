@@ -36,7 +36,7 @@ export default function Footer() {
                 href="/#themes"
                 className="text-peach/70 hover:text-peach transition-colors"
               >
-                Four themes
+                Five themes
               </Link>
             </li>
             <li>

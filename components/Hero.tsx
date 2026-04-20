@@ -44,7 +44,7 @@ export default function Hero() {
           </p>
 
           <p className="text-base md:text-lg text-peach/60 max-w-xl leading-relaxed mb-12 animate-fade-up">
-            Five days. Four gatherings you can host. One method — the same one we
+            Five days. Five gatherings you can host. One method — the same one we
             teach the leads at Revivery.
           </p>
 

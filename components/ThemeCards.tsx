@@ -37,7 +37,7 @@ export default function ThemeCards() {
           </div>
           <div className="md:col-span-8">
             <h2 className="font-display text-display-lg uppercase tracking-heading text-peach leading-[1.05]">
-              Four gatherings.
+              Five gatherings.
               <br />
               One method.
             </h2>
@@ -50,19 +50,27 @@ export default function ThemeCards() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {themes.map((theme, i) => (
+          {themes.map((theme, i) => {
+            const isLastAndOdd = i === themes.length - 1 && themes.length % 2 === 1;
+            return (
             <div
               key={theme.id}
-              className="group overflow-hidden bg-blue-black/40 hover:bg-blue-black/60 transition-colors"
+              className={`group overflow-hidden bg-blue-black/40 hover:bg-blue-black/60 transition-colors ${
+                isLastAndOdd ? "md:col-span-2" : ""
+              }`}
             >
               {/* Mood image header */}
-              <div className="relative aspect-[16/9] overflow-hidden">
+              <div
+                className={`relative overflow-hidden ${
+                  isLastAndOdd ? "aspect-[21/9]" : "aspect-[16/9]"
+                }`}
+              >
                 <Image
                   src={theme.image}
                   alt={theme.imageAlt}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes={isLastAndOdd ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-black via-blue-black/40 to-transparent" />
                 {/* Gold accent bar on hover */}
@@ -83,7 +91,8 @@ export default function ThemeCards() {
                 </p>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

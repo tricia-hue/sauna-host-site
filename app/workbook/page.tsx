@@ -22,7 +22,7 @@ export default function WorkbookPage() {
           title: "The Workbook",
           headline: "The 24-page workbook",
           subhead:
-            "Your printable companion. All scripts, prompts, breathwork cues, and four gathering plans.",
+            "Your printable companion. All scripts, prompts, breathwork cues, and five gathering plans.",
           openReadingLine: "",
           practicePrompt: "",
           practiceInstruction: "",
@@ -46,7 +46,7 @@ export default function WorkbookPage() {
           </h1>
           <p className="text-gold/90 italic text-xl max-w-2xl leading-relaxed">
             24 pages. Scripts, prompts, breathwork cues, and a complete plan for
-            each of the four gathering themes.
+            each of the five gathering themes.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export default function WorkbookPage() {
 
         {/* Theme navigation anchors */}
         <div className="mb-16">
-          <p className="eyebrow mb-6">Your four themes</p>
+          <p className="eyebrow mb-6">Your five themes</p>
           <div className="grid md:grid-cols-2 gap-0 border-t border-peach/10">
             {themes.map((theme, i) => (
               <div

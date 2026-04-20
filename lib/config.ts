@@ -67,6 +67,15 @@ export const themes = [
     image: "/images/cohort-briefing.jpg",
     imageAlt: "A small group gathered in conversation at Revivery",
   },
+  {
+    id: "couples",
+    name: "Couples",
+    tagline: "Date night, reimagined.",
+    description:
+      "2 couples or 3. The together-practice that rebuilds presence — contrast therapy as the conversation starter most relationships have been missing.",
+    image: "/images/couples.jpg",
+    imageAlt: "A couple moving together between the sauna and cold plunge at Revivery",
+  },
 ];
 
 export const faq = [
