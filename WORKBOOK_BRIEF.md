@@ -435,10 +435,10 @@ The five theme pages, with content filled in:
 
 ---
 
-### Page 9 — Couples
+### Page 9 — Couples Night
 
 - Eyebrow: "THEME 05"
-- Display L: "COUPLES"
+- Display L: "COUPLES NIGHT"
 - Tagline: *"Date night, reimagined."*
 
 - **THE INVITATION**
@@ -505,7 +505,7 @@ The five theme pages, with content filled in:
 - Body: "Draft your actual invitation text. Keep it 4 sentences max. Name what, when, how many, a soft ask. Read it out loud. Then send it."
 - **[LARGE WRITING AREA — one full card, gold hairline, peach bg]** "Draft your invitation:" 10 lines
 - **[CHECKLIST]**
-  - [ ] Names the theme (circle, gathering, milestone, book club, couples)
+  - [ ] Names the theme (circle, gathering, milestone, book club, couples night)
   - [ ] Names the time — roughly when, roughly how long
   - [ ] Names the size of the group
   - [ ] Contains one line that tells the reader why you want them specifically
@@ -570,7 +570,7 @@ The five theme pages, with content filled in:
   - Men's Gathering · 4–6 men · Box breath · grounded, direct
   - Milestone · 4–8 people · Box breath · celebratory, witnessing
   - Book Club · 4–6 readers · Box breath · curious, cerebral
-  - Couples · 2–3 couples · 4-7-8 · tender, present
+  - Couples Night · 2–3 couples · 4-7-8 · tender, present
 - Tear-line hint (a dashed gold rule at the edge with scissors icon): this page designed to be detachable as a reference card
 
 ### Page 19 — Breathwork Cheat Sheet (tear-out)

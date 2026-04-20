@@ -69,7 +69,7 @@ export const themes = [
   },
   {
     id: "couples",
-    name: "Couples",
+    name: "Couples Night",
     tagline: "Date night, reimagined.",
     description:
       "2 couples or 3. The together-practice that rebuilds presence — contrast therapy as the conversation starter most relationships have been missing.",

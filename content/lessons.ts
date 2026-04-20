@@ -52,7 +52,7 @@ export const lessons: Lesson[] = [
       "**Tomorrow — Lesson 2:** The four-sentence arrival script that sets emotional safety in 90 seconds. Most hosts get the first 90 seconds wrong in ways they can't diagnose. We'll fix that.",
       "**Day 3:** Two breathwork patterns any group can do together, even when nobody in the room has tried breathwork before. No woo. Just rhythm.",
       "**Day 4:** What to actually say in the twelve seconds before the cold — the difference between your guests bailing on the plunge and your guests becoming the reason everyone comes back.",
-      "**Day 5:** Five complete gathering plans — women's circle, men's gathering, milestone, book club, or couples. You pick one. You walk away with the invitation script, the 90-minute flow, the ten conversation prompts for your theme, the playlist, and the group text to send afterward.",
+      "**Day 5:** Five complete gathering plans — women's circle, men's gathering, milestone, book club, or couples night. You pick one. You walk away with the invitation script, the 90-minute flow, the ten conversation prompts for your theme, the playlist, and the group text to send afterward.",
       "By Friday, you'll have everything you need to pick a date in the next two to four weeks and host the gathering. Not someday. Soon.",
       "One day at a time. Starting now.",
     ],
@@ -159,7 +159,7 @@ export const lessons: Lesson[] = [
     headline: "Pick your theme",
     subhead: "Your first gathering, planned today.",
     openReadingLine:
-      "Pick your theme — women's circle, men's gathering, milestone, book club, or couples — and walk away with a full 90-minute plan.",
+      "Pick your theme — women's circle, men's gathering, milestone, book club, or couples night — and walk away with a full 90-minute plan.",
     practicePrompt: "Text one person today.",
     practiceInstruction:
       "Text one person right now — today — and tell them you want to host a gathering. Don't wait until you feel ready. You'll feel more ready after you've told one person out loud.",
@@ -185,7 +185,7 @@ export const lessons: Lesson[] = [
       "**Men's Gathering** — 4–6 men, depth without agenda, what men's retreats gesture at but rarely deliver.",
       "**Milestone Celebration** — a birthday, bachelorette, anniversary, or big threshold done differently.",
       "**Book Club** — the gathering where the book becomes the excuse to finally talk about what actually matters.",
-      "**Couples** — 2–3 couples, date night reimagined — the together-practice that rebuilds presence and gives relationships a shared ritual.",
+      "**Couples Night** — 2–3 couples, date night reimagined — the together-practice that rebuilds presence and gives relationships a shared ritual.",
       "Inside your workbook, Day 5's pages are five full gathering plans — one per theme. Pick yours today.",
       "Each plan includes the invitation script (what to text your people), the flow (timings for arrival, sauna round 1, plunge, integration, sauna round 2, close), 10 conversation prompts designed for that theme, the playlist suggestion, and the \"what to text the group afterward\" script.",
       "### What to do next",
