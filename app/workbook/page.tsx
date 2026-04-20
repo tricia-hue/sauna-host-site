@@ -52,17 +52,18 @@ export default function WorkbookPage() {
 
         <div className="border border-peach/15 bg-peach/[0.02] p-8 md:p-12 mb-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div>
-            <p className="eyebrow mb-2">Download</p>
+            <p className="eyebrow mb-2">Arriving soon</p>
             <p className="text-peach/80 text-lg">
               The Sauna Host — Workbook v1.0 (PDF, 8.5 × 11)
             </p>
             <p className="text-peach/50 text-sm mt-1">
-              Print it, fill it on your phone, or send it to a friend.
+              We're finalizing the print version. Meanwhile, every script,
+              prompt, and plan is already inside the five lessons below.
             </p>
           </div>
-          <a href="/workbook.pdf" download className="btn-primary">
-            Download PDF →
-          </a>
+          <span className="font-display text-xs uppercase tracking-heading text-gold/90 border border-gold/40 px-5 py-3">
+            Coming soon
+          </span>
         </div>
 
         {/* Workbook page reference index */}

@@ -37,6 +37,8 @@ export const themes = [
     tagline: "The girls' night you've been meaning to host.",
     description:
       "4–6 women. Intentional conversation. The gathering you wish existed.",
+    image: "/images/sauna-meditation-group.jpg",
+    imageAlt: "A group of women in a guided sauna circle",
   },
   {
     id: "mens-gathering",
@@ -44,6 +46,8 @@ export const themes = [
     tagline: "Depth without the workshop.",
     description:
       "4–6 men. Honesty without the therapist in the room. What men's retreats gesture at but rarely deliver.",
+    image: "/images/plunge-group.jpg",
+    imageAlt: "Men gathered around the cold plunge",
   },
   {
     id: "milestone",
@@ -51,6 +55,8 @@ export const themes = [
     tagline: "Birthdays and thresholds done differently.",
     description:
       "4–8 people. A birthday, a bachelorette, an anniversary, a big transition — marked in a way people remember.",
+    image: "/images/events-connection.jpg",
+    imageAlt: "A celebratory moment at Revivery",
   },
   {
     id: "book-club",
@@ -58,6 +64,8 @@ export const themes = [
     tagline: "Where the book becomes the excuse.",
     description:
       "4–6 people. The gathering where the contrast therapy is what gets the conversation past plot summary.",
+    image: "/images/cohort-briefing.jpg",
+    imageAlt: "A small group gathered in conversation at Revivery",
   },
 ];
 

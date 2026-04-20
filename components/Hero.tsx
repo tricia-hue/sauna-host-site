@@ -1,3 +1,4 @@
+import Image from "next/image";
 import OptInForm from "./OptInForm";
 
 export default function Hero() {
@@ -6,14 +7,25 @@ export default function Hero() {
       id="start"
       className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-section"
     >
-      {/* Subtle gold vertical pattern along the right edge — evokes the brand pattern rule */}
+      {/* Background image with dark overlay */}
+      <Image
+        src="/images/hero-sauna-group.jpg"
+        alt="Group sauna meditation session at Revivery"
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-blue-black/75" />
+
+      {/* Subtle gold vertical pattern along the right edge */}
       <div
         aria-hidden
-        className="absolute top-0 bottom-0 right-0 w-1 bg-gold/60"
+        className="absolute top-0 bottom-0 right-0 w-1 bg-gold/60 z-10"
       />
       <div
         aria-hidden
-        className="absolute top-1/2 right-12 -translate-y-1/2 hidden lg:block"
+        className="absolute top-1/2 right-12 -translate-y-1/2 hidden lg:block z-10"
       >
         <div className="flex flex-col gap-3 opacity-40">
           {Array.from({ length: 24 }).map((_, i) => (
