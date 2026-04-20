@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/config";
 
 export default function Nav() {
@@ -7,10 +8,21 @@ export default function Nav() {
       <div className="container-sauna flex items-center justify-between py-8">
         <Link
           href="/"
-          className="font-display text-xs uppercase tracking-display text-peach hover:text-gold transition-colors"
-          aria-label="The Sauna Host"
+          className="flex items-center gap-4 group"
+          aria-label="The Sauna Host — a free mini course from Revivery"
         >
-          Revivery / The Sauna Host
+          <Image
+            src="/brand/logo-primary-white.png"
+            alt="Revivery"
+            width={120}
+            height={28}
+            priority
+            className="h-6 md:h-7 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+          />
+          <span className="hidden sm:inline-block w-px h-4 bg-peach/30" aria-hidden />
+          <span className="font-display text-xs uppercase tracking-display text-peach/80 group-hover:text-gold transition-colors">
+            The Sauna Host
+          </span>
         </Link>
         <nav className="hidden md:flex items-center gap-10">
           <Link

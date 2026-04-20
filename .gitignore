@@ -32,3 +32,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# brand source assets — keep optimized copies in /public/brand and /public/images only
+/public/02 _ Logos
+/public/03 _ Pattern 2
+/public/album-d448711124-downloads
+/public/album-d469655919-downloads-pt1

@@ -18,20 +18,18 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-blue-black/75" />
 
-      {/* Subtle gold vertical pattern along the right edge */}
+      {/* Revivery gold brand pattern — upper right accent */}
       <div
         aria-hidden
-        className="absolute top-0 bottom-0 right-0 w-1 bg-gold/60 z-10"
-      />
-      <div
-        aria-hidden
-        className="absolute top-1/2 right-12 -translate-y-1/2 hidden lg:block z-10"
+        className="absolute -top-10 -right-10 w-[340px] h-[340px] md:w-[460px] md:h-[460px] opacity-30 z-10 pointer-events-none"
       >
-        <div className="flex flex-col gap-3 opacity-40">
-          {Array.from({ length: 24 }).map((_, i) => (
-            <div key={i} className="w-1 h-6 bg-gold" />
-          ))}
-        </div>
+        <Image
+          src="/brand/pattern-gold.png"
+          alt=""
+          fill
+          sizes="460px"
+          className="object-contain"
+        />
       </div>
 
       <div className="container-sauna relative z-10">

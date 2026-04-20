@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/config";
 
 export default function Footer() {
@@ -6,7 +7,13 @@ export default function Footer() {
     <footer className="border-t border-peach/10 mt-section">
       <div className="container-sauna py-16 grid md:grid-cols-3 gap-10">
         <div>
-          <p className="eyebrow mb-4">Revivery</p>
+          <Image
+            src="/brand/logo-primary-white.png"
+            alt="Revivery"
+            width={160}
+            height={36}
+            className="h-8 w-auto mb-6 opacity-90"
+          />
           <p className="text-peach/70 text-sm leading-relaxed max-w-xs">
             A social wellness studio in Tampa, FL. Guided contrast therapy. Trained
             leads. The practice, not the product.
