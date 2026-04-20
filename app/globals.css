@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * ABC Arizona Sans is a licensed typeface from ABC Dinamo.
+ * Place the .woff2 files into /public/fonts/ and this block will wire them up.
+ * If not yet licensed, the Inter fallback in tailwind.config.ts will render gracefully.
+ */
+@font-face {
+  font-family: "ABC Arizona Sans";
+  src: url("/fonts/ABCArizonaSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ABC Arizona Sans";
+  src: url("/fonts/ABCArizonaSans-RegularItalic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ABC Arizona Sans";
+  src: url("/fonts/ABCArizonaSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --teal: #395b5e;
+    --blue-black: #2e393f;
+    --gold: #ad8d4c;
+    --peach: #f4dfc8;
+    --peach-soft: #f9ecda;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-blue-black text-peach font-sans;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: var(--blue-black);
+  }
+
+  /* Prose styling for lesson content — premium editorial feel */
+  .prose-sauna {
+    @apply text-peach/90 leading-[1.75] text-lg;
+  }
+  .prose-sauna p {
+    @apply mb-6;
+  }
+  .prose-sauna h2 {
+    @apply font-display text-display-md text-peach mt-16 mb-6 uppercase tracking-heading;
+  }
+  .prose-sauna h3 {
+    @apply font-display text-2xl text-gold mt-10 mb-4 uppercase tracking-heading;
+  }
+  .prose-sauna strong {
+    @apply text-peach font-bold;
+  }
+  .prose-sauna em {
+    @apply text-peach/80 italic;
+  }
+  .prose-sauna blockquote {
+    @apply border-l-2 border-gold pl-6 my-8 italic text-peach/80;
+  }
+  .prose-sauna a {
+    @apply text-gold underline underline-offset-4 decoration-gold/40 hover:decoration-gold transition-colors;
+  }
+  .prose-sauna ul {
+    @apply my-6 space-y-3 list-none;
+  }
+  .prose-sauna ul li {
+    @apply pl-6 relative;
+  }
+  .prose-sauna ul li::before {
+    content: "";
+    @apply absolute left-0 top-3 w-2 h-px bg-gold;
+  }
+}
+
+@layer components {
+  /* Primary CTA button — gold with hover lift */
+  .btn-primary {
+    @apply inline-flex items-center justify-center
+           px-8 py-4 bg-gold text-blue-black
+           font-display uppercase tracking-heading text-sm
+           hover:bg-gold-light hover:-translate-y-0.5
+           transition-all duration-300 ease-out
+           cursor-pointer;
+  }
+
+  /* Secondary CTA — outlined */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center
+           px-8 py-4 border border-peach/40 text-peach
+           font-display uppercase tracking-heading text-sm
+           hover:border-peach hover:bg-peach/5
+           transition-all duration-300 ease-out
+           cursor-pointer;
+  }
+
+  /* Eyebrow label — small uppercase text above headlines */
+  .eyebrow {
+    @apply font-display uppercase text-xs tracking-display text-gold;
+  }
+
+  /* Section container */
+  .container-sauna {
+    @apply mx-auto max-w-6xl px-6 md:px-10;
+  }
+
+  /* Vertical brand-pattern divider (Gold, thin) */
+  .brand-divider {
+    @apply w-px h-24 bg-gold mx-auto;
+  }
+}
