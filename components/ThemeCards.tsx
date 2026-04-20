@@ -7,7 +7,7 @@ export default function ThemeCards() {
       {/* Revivery gold brand pattern — layered decor behind the cards */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-24 top-1/3 w-[520px] h-[520px] md:w-[720px] md:h-[720px] opacity-[0.08] z-0 select-none"
+        className="pointer-events-none absolute -left-24 top-1/3 w-[520px] h-[520px] md:w-[720px] md:h-[720px] opacity-[0.28] z-0 select-none"
       >
         <Image
           src="/brand/pattern-gold.png"
@@ -19,7 +19,7 @@ export default function ThemeCards() {
       </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-20 bottom-10 w-[380px] h-[380px] md:w-[520px] md:h-[520px] opacity-[0.06] z-0 rotate-180 select-none"
+        className="pointer-events-none absolute -right-20 bottom-10 w-[380px] h-[380px] md:w-[520px] md:h-[520px] opacity-[0.26] z-0 rotate-180 select-none"
       >
         <Image
           src="/brand/pattern-gold.png"

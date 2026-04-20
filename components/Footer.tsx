@@ -65,7 +65,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href={site.parentSite}
+                href="https://revivery.co/instructor-training/"
                 className="text-peach/70 hover:text-gold transition-colors"
                 target="_blank"
                 rel="noopener"
