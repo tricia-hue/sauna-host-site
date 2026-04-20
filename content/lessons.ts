@@ -30,9 +30,9 @@ export const lessons: Lesson[] = [
     subhead: "Why connection is the real medicine — and why we've forgotten how.",
     openReadingLine:
       "Why connection is the real medicine, and why you've been doing this alone.",
-    practicePrompt: "Think of your people.",
+    practicePrompt: "Name your people. Then tell one.",
     practiceInstruction:
-      "Not the whole address book. Not everyone on Instagram. Just the 4–8 people you've been meaning to see. The ones who would show up if you sent them an invitation that said, \"Come do this thing with me.\" Write their names down. That's it for today.",
+      "Think of the 4–8 people you've been meaning to see — the ones who would show up if you sent them an invitation that said, \"Come do this thing with me.\" Write their names down. Then pick one, and text them today. Something like: \"I'm working on hosting a small gathering in the next few weeks. Would you want to be one of the people I plan it around?\" That's it. No date. No details. Just a soft commitment — yours and theirs. The rest of this course gets much easier once someone else knows you're doing it.",
     workbookPageRef: "Page 1 — Your Gathering Starts With People",
     invitationToNext:
       "Tomorrow we'll teach you how to set the container — how to open a gathering so people actually show up to it, not just to the schedule.",
@@ -47,7 +47,14 @@ export const lessons: Lesson[] = [
       "When you sit in heat with another person, your body moves into a state that's almost impossible to fake. You can't hide when you're sweating. You can't scroll. You can't check out. The heat forces presence. Then the cold forces honesty — because when your body is shocked, your social performance drops. What's left is the actual you.",
       "And the actual you, sitting across from the actual them, for ten quiet minutes — that's what people don't know they're hungry for.",
       "This course is about how to host that. Not a party. Not a workout. A **gathering**. A specific, intentional, beautifully simple thing that turns your sauna and cold plunge into the container for the kind of conversation your friends will call you about months later.",
-      "That's what we'll build, one day at a time.",
+      "### What's coming",
+      "Over the next four days, I'll give you the four things that separate a gathering your friends remember from one that fizzles out at the first sauna round. None of these can be figured out from vibes — there's a reason the leads at Revivery train for months before they run a session. I've distilled what actually matters.",
+      "**Tomorrow — Lesson 2:** The four-sentence arrival script that sets emotional safety in 90 seconds. Most hosts get the first 90 seconds wrong in ways they can't diagnose. We'll fix that.",
+      "**Day 3:** Two breathwork patterns any group can do together, even when nobody in the room has tried breathwork before. No woo. Just rhythm.",
+      "**Day 4:** What to actually say in the twelve seconds before the cold — the difference between your guests bailing on the plunge and your guests becoming the reason everyone comes back.",
+      "**Day 5:** Five complete gathering plans — women's circle, men's gathering, milestone, book club, or couples. You pick one. You walk away with the invitation script, the 90-minute flow, the ten conversation prompts for your theme, the playlist, and the group text to send afterward.",
+      "By Friday, you'll have everything you need to pick a date in the next two to four weeks and host the gathering. Not someday. Soon.",
+      "One day at a time. Starting now.",
     ],
   },
   {
