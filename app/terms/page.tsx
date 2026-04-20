@@ -125,7 +125,7 @@ export default function TermsPage() {
               Questions? Email us at{" "}
               <a
                 href={`mailto:${site.replyTo}`}
-                className="text-gold hover:text-gold-light"
+                className="text-gold hover:text-peach"
               >
                 {site.replyTo}
               </a>

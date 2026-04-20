@@ -140,7 +140,7 @@ export default function WorkbookPage() {
             </Link>
             <Link
               href="https://revivery.co/instructor-training"
-              className="font-display text-xs uppercase tracking-heading text-gold hover:text-gold-light transition-colors self-center"
+              className="font-display text-xs uppercase tracking-heading text-gold hover:text-peach transition-colors self-center"
             >
               The bigger path — RIT →
             </Link>

@@ -102,7 +102,7 @@ export default function OptInForm({
       )}
 
       {status === "error" && error && (
-        <p className="text-gold-light text-sm mt-3" role="alert">
+        <p className="text-gold text-sm mt-3" role="alert">
           {error} — try again, or email us at learn@revivery.co.
         </p>
       )}

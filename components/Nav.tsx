@@ -2,6 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/config";
 
+/**
+ * Nav — Revivery brand note (digital adaptation):
+ * The Revivery Brand Manual (§1) specifies the Primary Logo must be center- or right-justified.
+ * On web, left-justified logos are the dominant UX convention — users expect the brand mark
+ * at the top-left as the "home" affordance. We preserve web convention here with the
+ * canonical Peach logo on Blue Black (the manual's preferred on-brand color pairing).
+ */
 export default function Nav() {
   return (
     <header className="absolute top-0 left-0 right-0 z-30">
@@ -12,12 +19,12 @@ export default function Nav() {
           aria-label="The Sauna Host — a free mini course from Revivery"
         >
           <Image
-            src="/brand/logo-primary-white.png"
+            src="/brand/logo-primary-peach.png"
             alt="Revivery"
             width={120}
             height={28}
             priority
-            className="h-6 md:h-7 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+            className="h-6 md:h-7 w-auto opacity-95 group-hover:opacity-100 transition-opacity"
           />
           <span className="hidden sm:inline-block w-px h-4 bg-peach/30" aria-hidden />
           <span className="font-display text-xs uppercase tracking-display text-peach/80 group-hover:text-gold transition-colors">
@@ -45,7 +52,7 @@ export default function Nav() {
           </Link>
           <Link
             href="/#start"
-            className="font-display text-xs uppercase tracking-heading text-gold hover:text-gold-light transition-colors"
+            className="font-display text-xs uppercase tracking-heading text-gold hover:text-peach transition-colors"
           >
             Start free →
           </Link>

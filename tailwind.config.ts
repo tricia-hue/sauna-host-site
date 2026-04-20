@@ -14,24 +14,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Revivery brand palette (exact hex values from brand manual)
-        teal: {
-          DEFAULT: "#395b5e",
-          900: "#2a4547",
-        },
-        "blue-black": {
-          DEFAULT: "#2e393f",
-          900: "#1c2328",
-        },
-        gold: {
-          DEFAULT: "#ad8d4c",
-          light: "#c4a368",
-          dark: "#8a6f3b",
-        },
-        peach: {
-          DEFAULT: "#f4dfc8",
-          soft: "#f9ecda",
-        },
+        // Revivery canonical brand palette — exact hex values from the brand manual.
+        // The manual defines four colors only; extended variants were removed in the
+        // brand audit (see BRAND_NOTES.md). Use opacity modifiers (e.g. `text-gold/70`)
+        // for shading instead of named variants.
+        teal: "#395b5e",
+        "blue-black": "#2e393f",
+        gold: "#ad8d4c",
+        peach: "#f4dfc8",
       },
       fontFamily: {
         // Primary: ABC Arizona Sans. Fallback chain kept wide until the

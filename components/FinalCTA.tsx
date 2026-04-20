@@ -1,17 +1,24 @@
+import Image from "next/image";
 import OptInForm from "./OptInForm";
 
 export default function FinalCTA() {
   return (
-    <section className="py-section border-t border-peach/10 bg-teal/10 relative overflow-hidden">
+    <section className="py-section border-t border-peach/10 bg-blue-black relative overflow-hidden">
+      {/*
+        Revivery brand pattern — vertical, left-justified, bleeding off the left edge,
+        on Blue Black. Per Revivery Brand Manual §2.
+      */}
       <div
         aria-hidden
-        className="absolute top-1/2 left-12 -translate-y-1/2 hidden lg:block opacity-30"
+        className="pointer-events-none absolute top-0 -left-24 md:-left-32 h-full w-[320px] md:w-[460px] opacity-25 z-0 select-none"
       >
-        <div className="flex flex-col gap-3">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div key={i} className="w-1 h-6 bg-gold" />
-          ))}
-        </div>
+        <Image
+          src="/brand/pattern-gold.png"
+          alt=""
+          fill
+          sizes="460px"
+          className="object-contain object-left"
+        />
       </div>
 
       <div className="container-sauna relative z-10">

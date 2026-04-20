@@ -3,30 +3,25 @@ import { themes } from "@/lib/config";
 
 export default function ThemeCards() {
   return (
-    <section id="themes" className="relative py-section border-t border-peach/10 bg-teal/5 overflow-hidden">
-      {/* Revivery gold brand pattern — layered decor behind the cards */}
+    <section
+      id="themes"
+      className="relative py-section border-t border-peach/10 bg-blue-black overflow-hidden"
+    >
+      {/*
+        Revivery brand pattern — single instance, vertical, right-justified, bleeding off
+        the right edge, on Blue Black background. Per Revivery Brand Manual §2:
+        pattern only on Blue Black, vertical only, left or right justified, must bleed off.
+      */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-24 top-1/3 w-[520px] h-[520px] md:w-[720px] md:h-[720px] opacity-[0.28] z-0 select-none"
-      >
-        <Image
-          src="/brand/pattern-gold.png"
-          alt=""
-          fill
-          sizes="720px"
-          className="object-contain"
-        />
-      </div>
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-20 bottom-10 w-[380px] h-[380px] md:w-[520px] md:h-[520px] opacity-[0.26] z-0 rotate-180 select-none"
+        className="pointer-events-none absolute top-0 -right-24 md:-right-32 h-full w-[360px] md:w-[520px] opacity-30 z-0 select-none"
       >
         <Image
           src="/brand/pattern-gold.png"
           alt=""
           fill
           sizes="520px"
-          className="object-contain"
+          className="object-contain object-right"
         />
       </div>
 

@@ -2,17 +2,23 @@ import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/config";
 
+/**
+ * Footer — Revivery brand note (digital adaptation):
+ * Per Revivery Brand Manual §1, Primary Logo must be center- or right-justified.
+ * On web, footer logos in column 1 (left) are a UX convention we preserve intentionally.
+ * The Peach logo on Blue Black is the manual's preferred on-brand color pairing.
+ */
 export default function Footer() {
   return (
     <footer className="border-t border-peach/10 mt-section">
       <div className="container-sauna py-16 grid md:grid-cols-3 gap-10">
         <div>
           <Image
-            src="/brand/logo-primary-white.png"
+            src="/brand/logo-primary-peach.png"
             alt="Revivery"
             width={160}
             height={36}
-            className="h-8 w-auto mb-6 opacity-90"
+            className="h-8 w-auto mb-6 opacity-95"
           />
           <p className="text-peach/70 text-sm leading-relaxed max-w-xs">
             A social wellness studio in Tampa, FL. Guided contrast therapy. Trained

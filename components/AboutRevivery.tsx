@@ -39,7 +39,7 @@ export default function AboutRevivery() {
                 href={site.ritUrl}
                 target="_blank"
                 rel="noopener"
-                className="font-display text-xs uppercase tracking-heading text-gold hover:text-gold-light transition-colors self-center"
+                className="font-display text-xs uppercase tracking-heading text-gold hover:text-peach transition-colors self-center"
               >
                 Explore Instructor Training →
               </a>
