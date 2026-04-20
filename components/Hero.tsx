@@ -7,7 +7,7 @@ export default function Hero() {
       id="start"
       className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-section"
     >
-      {/* Background image with dark overlay */}
+      {/* Background image — warm, no grayscale overlay */}
       <Image
         src="/images/hero-sauna-group.jpg"
         alt="Group sauna meditation session at Revivery"
@@ -16,21 +16,16 @@ export default function Hero() {
         className="object-cover object-center"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-blue-black/75" />
-
-      {/* Revivery gold brand pattern — upper right accent */}
+      {/* Left-to-right gradient so copy stays legible without washing out the image */}
       <div
         aria-hidden
-        className="absolute -top-10 -right-10 w-[340px] h-[340px] md:w-[460px] md:h-[460px] opacity-30 z-10 pointer-events-none"
-      >
-        <Image
-          src="/brand/pattern-gold.png"
-          alt=""
-          fill
-          sizes="460px"
-          className="object-contain"
-        />
-      </div>
+        className="absolute inset-0 bg-gradient-to-r from-blue-black/90 via-blue-black/60 to-blue-black/10"
+      />
+      {/* Soft bottom fade to ground the section */}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-blue-black to-transparent"
+      />
 
       <div className="container-sauna relative z-10">
         <div className="max-w-4xl">

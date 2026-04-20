@@ -3,8 +3,34 @@ import { themes } from "@/lib/config";
 
 export default function ThemeCards() {
   return (
-    <section id="themes" className="py-section border-t border-peach/10 bg-teal/5">
-      <div className="container-sauna">
+    <section id="themes" className="relative py-section border-t border-peach/10 bg-teal/5 overflow-hidden">
+      {/* Revivery gold brand pattern — layered decor behind the cards */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-24 top-1/3 w-[520px] h-[520px] md:w-[720px] md:h-[720px] opacity-[0.08] z-0 select-none"
+      >
+        <Image
+          src="/brand/pattern-gold.png"
+          alt=""
+          fill
+          sizes="720px"
+          className="object-contain"
+        />
+      </div>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-20 bottom-10 w-[380px] h-[380px] md:w-[520px] md:h-[520px] opacity-[0.06] z-0 rotate-180 select-none"
+      >
+        <Image
+          src="/brand/pattern-gold.png"
+          alt=""
+          fill
+          sizes="520px"
+          className="object-contain"
+        />
+      </div>
+
+      <div className="container-sauna relative z-10">
         <div className="grid md:grid-cols-12 gap-10 mb-20">
           <div className="md:col-span-4">
             <p className="eyebrow mb-4">The themes</p>
