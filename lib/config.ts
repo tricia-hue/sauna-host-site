@@ -81,7 +81,7 @@ export const themes = [
 export const faq = [
   {
     q: "Is this really free?",
-    a: "Yes. The full 5-day course and the 24-page companion workbook are free. We built it as a sampler of our full instructor training — some of you will want more; most won't. Either way, the course is yours to keep.",
+    a: "Yes. The full 5-day course and the 26-page companion workbook are free. We built it as a sampler of our full instructor training — some of you will want more; most won't. Either way, the course is yours to keep.",
   },
   {
     q: "What do I need to take the course?",

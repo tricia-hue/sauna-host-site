@@ -28,18 +28,10 @@ export default function AboutRevivery() {
             </p>
             <div className="flex flex-wrap gap-4 mt-10">
               <a
-                href={site.parentSite}
-                target="_blank"
-                rel="noopener"
-                className="btn-secondary"
-              >
-                Visit Revivery Tampa
-              </a>
-              <a
                 href={site.ritUrl}
                 target="_blank"
                 rel="noopener"
-                className="font-display text-xs uppercase tracking-heading text-gold hover:text-peach transition-colors self-center"
+                className="btn-secondary"
               >
                 Explore Instructor Training →
               </a>

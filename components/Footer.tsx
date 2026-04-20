@@ -66,17 +66,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener"
               >
-                Revivery Instructor Training →
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://revivery.co/instructor-training/"
-                className="text-peach/70 hover:text-gold transition-colors"
-                target="_blank"
-                rel="noopener"
-              >
-                Visit Revivery Tampa →
+                Explore Instructor Training →
               </a>
             </li>
             <li>

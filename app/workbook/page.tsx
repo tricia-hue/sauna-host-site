@@ -8,7 +8,7 @@ import { themes } from "@/lib/config";
 export const metadata: Metadata = {
   title: "The Workbook | The Sauna Host",
   description:
-    "Your 24-page printable companion. All scripts, prompts, breathwork cues, and gathering plans for your first sauna and cold plunge gathering.",
+    "Your 26-page printable companion. All scripts, prompts, breathwork cues, and gathering plans for your first sauna and cold plunge gathering.",
 };
 
 export default function WorkbookPage() {
@@ -20,7 +20,7 @@ export default function WorkbookPage() {
           day: 0,
           slug: "workbook",
           title: "The Workbook",
-          headline: "The 24-page workbook",
+          headline: "The 26-page workbook",
           subhead:
             "Your printable companion. All scripts, prompts, breathwork cues, and five gathering plans.",
           openReadingLine: "",
@@ -45,25 +45,29 @@ export default function WorkbookPage() {
             Workbook.
           </h1>
           <p className="text-gold/90 italic text-xl max-w-2xl leading-relaxed">
-            24 pages. Scripts, prompts, breathwork cues, and a complete plan for
+            26 pages. Scripts, prompts, breathwork cues, and a complete plan for
             each of the five gathering themes.
           </p>
         </div>
 
         <div className="border border-peach/15 bg-peach/[0.02] p-8 md:p-12 mb-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div>
-            <p className="eyebrow mb-2">Arriving soon</p>
+            <p className="eyebrow mb-2">Your download</p>
             <p className="text-peach/80 text-lg">
               The Sauna Host — Workbook v1.0 (PDF, 8.5 × 11)
             </p>
             <p className="text-peach/50 text-sm mt-1">
-              We're finalizing the print version. Meanwhile, every script,
-              prompt, and plan is already inside the five lessons below.
+              26 pages · print-ready. Open it on screen, or print it and keep
+              it beside your sauna.
             </p>
           </div>
-          <span className="font-display text-xs uppercase tracking-heading text-gold/90 border border-gold/40 px-5 py-3">
-            Coming soon
-          </span>
+          <a
+            href="/sauna-host-workbook.pdf"
+            download="Revivery-Sauna-Host-Workbook.pdf"
+            className="btn-primary whitespace-nowrap"
+          >
+            Download the workbook →
+          </a>
         </div>
 
         {/* Workbook page reference index */}

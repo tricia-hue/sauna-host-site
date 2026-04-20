@@ -38,3 +38,6 @@ next-env.d.ts
 /public/03 _ Pattern 2
 /public/album-d448711124-downloads
 /public/album-d469655919-downloads-pt1
+
+# internal brand reference — kept locally for design handoffs, not publicly deployed
+/public/Revivery_Brand_Manual.pdf

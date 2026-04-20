@@ -57,7 +57,7 @@ export default function Hero() {
             <span className="w-px h-3 bg-peach/30" />
             <span>Free 5-Day Course</span>
             <span className="w-px h-3 bg-peach/30" />
-            <span>24-Page Workbook</span>
+            <span>26-Page Workbook</span>
           </div>
         </div>
       </div>

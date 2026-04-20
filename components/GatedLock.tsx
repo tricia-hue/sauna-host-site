@@ -30,7 +30,7 @@ export default function GatedLock({ lesson }: GatedLockProps) {
           </p>
 
           <p className="text-peach/80 max-w-md mx-auto mb-10 leading-relaxed">
-            Enter your email to unlock Lessons 2–5 and the full 24-page workbook.
+            Enter your email to unlock Lessons 2–5 and the full 26-page workbook.
             No payment. No credit card. Day 1 is already free to read.
           </p>
 

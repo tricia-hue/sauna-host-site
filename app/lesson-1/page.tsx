@@ -22,7 +22,7 @@ export default function Lesson1Page() {
             <p className="eyebrow mb-6 text-gold">Unlock the rest of the course</p>
             <h2 className="font-display text-display-md uppercase tracking-heading text-peach leading-tight mb-6">
               Four more lessons<br />
-              + the 24-page workbook.
+              + the 26-page workbook.
             </h2>
             <p className="text-peach/70 leading-relaxed max-w-lg mx-auto mb-10">
               Enter your email to unlock Lessons 2 through 5 and the printable

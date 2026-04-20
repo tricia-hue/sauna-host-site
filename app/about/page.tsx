@@ -70,20 +70,12 @@ export default function AboutPage() {
 
         <div className="mt-16 flex flex-wrap gap-4">
           <a
-            href={site.parentSite}
+            href={site.ritUrl}
             target="_blank"
             rel="noopener"
             className="btn-primary"
           >
-            Visit Revivery Tampa →
-          </a>
-          <a
-            href={site.ritUrl}
-            target="_blank"
-            rel="noopener"
-            className="btn-secondary"
-          >
-            Explore Instructor Training
+            Explore Instructor Training →
           </a>
         </div>
 

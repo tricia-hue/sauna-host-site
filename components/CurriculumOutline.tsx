@@ -61,7 +61,7 @@ export default function CurriculumOutline() {
         </ol>
 
         <p className="text-peach/50 text-sm mt-10 max-w-2xl leading-relaxed">
-          Lesson 1 is free to read. Lessons 2–5 and the 24-page workbook unlock
+          Lesson 1 is free to read. Lessons 2–5 and the 26-page workbook unlock
           when you join — a single email, no payment, no credit card.
         </p>
       </div>
