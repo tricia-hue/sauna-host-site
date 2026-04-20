@@ -54,7 +54,7 @@ export default function AboutRevivery() {
                   src="/images/sauna-meditation-group.jpg"
                   alt="Guided sauna session at Revivery Tampa"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   sizes="(max-width: 768px) 50vw, 30vw"
                 />
               </div>
@@ -63,7 +63,7 @@ export default function AboutRevivery() {
                   src="/images/plunge-joy.jpg"
                   alt="Connection after the plunge at Revivery"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   sizes="(max-width: 768px) 50vw, 30vw"
                 />
               </div>

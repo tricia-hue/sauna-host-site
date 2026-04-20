@@ -64,7 +64,7 @@ export default function ThemeCards() {
                   src={theme.image}
                   alt={theme.imageAlt}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   sizes={isLastAndOdd ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-black via-blue-black/40 to-transparent" />

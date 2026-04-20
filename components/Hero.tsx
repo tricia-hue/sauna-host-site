@@ -13,7 +13,7 @@ export default function Hero() {
         alt="Group sauna meditation session at Revivery"
         fill
         priority
-        className="object-cover object-center"
+        className="object-cover object-[center_top]"
         sizes="100vw"
       />
       {/* Left-to-right gradient so copy stays legible without washing out the image */}

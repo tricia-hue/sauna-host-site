@@ -13,7 +13,7 @@ export default function WhySection() {
                 src="/images/community-joy.jpg"
                 alt="A group connecting after a contrast therapy session"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 40vw"
               />
               <div className="absolute inset-0 bg-blue-black/10" />
