@@ -1,9 +1,11 @@
 # The Sauna Host — Workbook v1.0
 
-**Design brief for Claude Design (or any designer receiving this handoff).**
+**Status:** ✅ **Shipped.** The final 26-page print PDF is live at `/public/sauna-host-workbook.pdf` and served as a download from the gated `/workbook` page. This brief is retained as the historical spec the design was built against — useful for future revisions, v2 updates, or handoffs when the workbook is redesigned.
+
+**Design brief originally authored for Claude Design.**
 **v1.1 — reconciled with Revivery Brand Manual (Oxford Creative Studio).**
 
-This is a 24-page printable + fillable PDF companion to the free 5-day mini-course at sauna-host-site.vercel.app. It's the "keep this forever" asset the reader receives after opting in with email. It is the single most important conversion lever in the funnel — every lesson refers to specific workbook pages, and the perceived value of the workbook is what justifies the email.
+This is a 26-page printable PDF companion to the free 5-day mini-course at thesaunahost.com. It's the "keep this forever" asset the reader receives after opting in with email. It is the single most important conversion lever in the funnel — every lesson refers to specific workbook pages, and the perceived value of the workbook is what justifies the email.
 
 ---
 
