@@ -12,7 +12,7 @@ A Next.js 14 (App Router) + TypeScript + Tailwind app that hosts Revivery's free
 - Landing page with curriculum, 5 themes, FAQ, and email opt-in
 - Lesson 1 is open (the tripwire)
 - Lessons 2–5 and the workbook download are gated behind email capture
-- `/api/subscribe` POSTs the email to Mailchimp and sets a cookie that unlocks the rest
+- `/api/subscribe` POSTs the email to Brevo and sets a cookie that unlocks the rest
 - `/api/unlock` restores access for existing subscribers on new devices
 - Downloadable 26-page PDF workbook at `/sauna-host-workbook.pdf`
 
@@ -24,7 +24,7 @@ A Next.js 14 (App Router) + TypeScript + Tailwind app that hosts Revivery's free
 # from this directory
 npm install
 cp .env.example .env.local
-# ... fill in your Mailchimp credentials in .env.local
+# ... fill in your Brevo credentials in .env.local
 npm run dev
 ```
 
@@ -38,12 +38,11 @@ Already deployed and connected to GitHub at `tricia-hue/sauna-host-site`. Every 
 
 ### Environment variables (set in Vercel → Settings → Environment Variables)
 
-- `MAILCHIMP_API_KEY`
-- `MAILCHIMP_SERVER_PREFIX` (e.g. `us21`)
-- `MAILCHIMP_AUDIENCE_ID`
-- `MAILCHIMP_TAG` (default: `sauna-host-course`)
+- `BREVO_API_KEY` (starts with `xkeysib-...`)
+- `BREVO_LIST_ID` (numeric — find under Brevo → Contacts → Lists)
+- `BREVO_SOURCE_TAG` (optional; default: `sauna-host-course`)
 
-Without these, signups are silently logged and no emails go out. See `lib/email.ts:35`.
+Without these, signups are silently logged and no emails go out. See `lib/email.ts`.
 
 ### Custom domain
 
@@ -66,14 +65,14 @@ sauna-host-site/
 │   ├── about/                     # About Revivery page
 │   ├── privacy/ + terms/          # Legal pages
 │   └── api/
-│       ├── subscribe/route.ts     # POST: email → Mailchimp → set unlock cookie
+│       ├── subscribe/route.ts     # POST: email → Brevo → set unlock cookie
 │       └── unlock/route.ts        # GET: restore access (cookie set via query param)
 ├── components/                    # Reusable UI (Nav, Hero, ThemeCards, etc.)
 ├── content/lessons.ts             # Full lesson text as structured data
 ├── lib/
 │   ├── config.ts                  # Site + brand config (single source of truth)
 │   ├── auth.ts                    # Cookie-based gating
-│   └── email.ts                   # Mailchimp integration (swap to change ESP)
+│   └── email.ts                   # Brevo integration (swap to change ESP)
 ├── public/
 │   ├── sauna-host-workbook.pdf    # The 26-page workbook (gated download)
 │   ├── og-image.jpg               # Open Graph share image (1200 × 630)
@@ -140,7 +139,7 @@ Gating is enforced by a cookie (`sh_unlocked`) set server-side by `/api/subscrib
 
 ## Swapping ESPs
 
-The Mailchimp implementation is in `lib/email.ts`. The public API is a single async function:
+The Brevo implementation is in `lib/email.ts`. The public API is a single async function:
 
 ```ts
 subscribeToEmailList({
@@ -169,8 +168,9 @@ To use Klaviyo or ConvertKit, replace the body of that function and update env-v
 - Five themes — Women's Circle, Men's Gathering, Milestone, Book Club, Couples Night
 
 ### 🟡 Still to do before scaling traffic
-- [ ] Verify Vercel Mailchimp env vars are set in production
-- [ ] Build the 5-email Mailchimp drip automation (content already written in `content/lessons.ts`)
+- [ ] Create Brevo account, list, API key — then set `BREVO_API_KEY` + `BREVO_LIST_ID` in Vercel (see `INFRASTRUCTURE.md`)
+- [ ] Re-run end-to-end signup test against Brevo
+- [ ] Build the 5-email Brevo drip automation (content already written in `content/lessons.ts`)
 - [ ] Build the Day-6 RIT pitch email
 - [ ] End-to-end test: real signup → Day 1 arrives → lessons 2–5 arrive on schedule → workbook downloads cleanly
 - [ ] Add Vercel Analytics or Plausible for conversion tracking

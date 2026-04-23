@@ -7,7 +7,7 @@ import { getCookieConfig } from "@/lib/auth";
  * POST /api/subscribe
  * Body: { email: string, firstName?: string, theme?: string, source?: string }
  *
- * 1. Adds the email to the ESP (Mailchimp by default; see lib/email.ts)
+ * 1. Adds the email to the ESP (Brevo by default; see lib/email.ts)
  * 2. Sets the unlock cookie so Lessons 2–5 and the workbook become accessible
  * 3. Returns { ok: true } on success — the client then redirects to /welcome
  */

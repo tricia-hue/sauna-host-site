@@ -58,7 +58,7 @@ export default function PrivacyPage() {
               Service providers
             </h2>
             <p>
-              We use Mailchimp to send course emails, Vercel to host this site,
+              We use Brevo to send course emails, Vercel to host this site,
               and standard analytics tools to understand how the course is used.
               These providers are bound by their own privacy commitments and
               only process data on our behalf.
