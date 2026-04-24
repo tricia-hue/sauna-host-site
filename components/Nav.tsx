@@ -1,6 +1,22 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/config";
+
+/**
+ * Smooth-scroll to the hero's email input and focus it.
+ * Used by the nav "Start free" CTA so the click always produces a visible,
+ * obvious outcome — even when the user is already near the top of the page.
+ */
+function focusEmailInput(e: React.MouseEvent<HTMLAnchorElement>) {
+  e.preventDefault();
+  const el = document.getElementById("email-input") as HTMLInputElement | null;
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "center" });
+  // Wait for scroll to settle before focusing (prevents iOS jump-and-snap)
+  window.setTimeout(() => el.focus({ preventScroll: true }), 450);
+}
 
 /**
  * Nav — Revivery brand note (digital adaptation):
@@ -52,6 +68,7 @@ export default function Nav() {
           </Link>
           <Link
             href="/#start"
+            onClick={focusEmailInput}
             className="font-display text-xs uppercase tracking-heading text-gold hover:text-peach transition-colors"
           >
             Start free →

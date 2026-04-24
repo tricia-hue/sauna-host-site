@@ -79,6 +79,7 @@ export default function OptInForm({
           />
         )}
         <input
+          id={isHero ? "email-input" : undefined}
           name="email"
           type="email"
           autoComplete="email"
