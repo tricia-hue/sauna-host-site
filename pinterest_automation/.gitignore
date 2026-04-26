@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+tokens.json
+analytics_*.csv
+post_log.txt
+launchd.out.log
+launchd.err.log
