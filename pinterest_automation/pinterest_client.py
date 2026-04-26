@@ -24,8 +24,12 @@ from typing import Any, Optional
 import requests
 from dotenv import load_dotenv, set_key
 
-API_BASE = "https://api.pinterest.com/v5"
-TOKEN_URL = "https://api.pinterest.com/v5/oauth/token"
+# Production by default. Override to "https://api-sandbox.pinterest.com/v5"
+# (e.g., via PINTEREST_API_BASE in .env) to use Pinterest's sandbox — useful
+# for recording a Trial-access demo video before Standard access is granted,
+# since Trial apps can't create pins in production but can in sandbox.
+API_BASE = os.getenv("PINTEREST_API_BASE", "https://api.pinterest.com/v5")
+TOKEN_URL = f"{API_BASE}/oauth/token"
 ENV_PATH = Path(__file__).parent / ".env"
 
 

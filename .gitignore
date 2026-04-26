@@ -41,3 +41,4 @@ next-env.d.ts
 
 # internal brand reference — kept locally for design handoffs, not publicly deployed
 /public/Revivery_Brand_Manual.pdf
+.claude/

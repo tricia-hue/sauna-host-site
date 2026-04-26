@@ -34,12 +34,17 @@ ENV_PATH = Path(__file__).parent / ".env"
 AUTHORIZE_URL = "https://www.pinterest.com/oauth/"
 TOKEN_URL = "https://api.pinterest.com/v5/oauth/token"
 
-# Scopes we need: pins read+write (for posting), boards read (for finding
-# boards), user_accounts read (for analytics). Adjust as needed.
+# Scopes we need:
+#   pins:read + pins:write   - reading and creating pins
+#   boards:read              - finding boards
+#   boards:write             - REQUIRED for create_pin (Pinterest treats
+#                              creating-a-pin-on-a-board as a board write)
+#   user_accounts:read       - analytics
 SCOPES = [
     "pins:read",
     "pins:write",
     "boards:read",
+    "boards:write",
     "user_accounts:read",
 ]
 
