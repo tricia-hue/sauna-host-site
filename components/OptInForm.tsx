@@ -46,6 +46,9 @@ export default function OptInForm({
         throw new Error(body.message || "Something went wrong");
       }
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).fbq?.("track", "Lead", { source });
+
       router.push(redirectTo);
       router.refresh();
     } catch (err) {
