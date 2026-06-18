@@ -3,13 +3,22 @@ import { Lesson, lessons } from "@/content/lessons";
 
 type LessonBodyProps = {
   lesson: Lesson;
+  /**
+   * True when the *next* lesson (and the workbook) are still behind the email
+   * gate — i.e. on Lesson 1. Makes the end-of-lesson links honest: instead of
+   * pretending to continue for free, they point to the opt-in form (#unlock).
+   */
+  nextGated?: boolean;
 };
 
 /**
  * Renders the full body of a lesson in premium editorial typography.
  * Handles inline markdown-ish tokens (**bold**, *italic*, > blockquote, ### h3).
  */
-export default function LessonBody({ lesson }: LessonBodyProps) {
+export default function LessonBody({
+  lesson,
+  nextGated = false,
+}: LessonBodyProps) {
   const nextLesson = lessons.find((l) => l.day === lesson.day + 1);
 
   return (
@@ -52,9 +61,15 @@ export default function LessonBody({ lesson }: LessonBodyProps) {
             <p className="eyebrow mb-2">Workbook</p>
             <p className="text-peach/80">{lesson.workbookPageRef}</p>
           </div>
-          <Link href="/workbook" className="btn-secondary">
-            Open workbook
-          </Link>
+          {nextGated ? (
+            <a href="#unlock" className="btn-secondary whitespace-nowrap">
+              Unlock the workbook →
+            </a>
+          ) : (
+            <Link href="/workbook" className="btn-secondary">
+              Open workbook
+            </Link>
+          )}
         </div>
 
         {/* Safety note */}
@@ -70,11 +85,16 @@ export default function LessonBody({ lesson }: LessonBodyProps) {
           <p className="text-peach/80 text-lg leading-relaxed max-w-2xl mb-10">
             {lesson.invitationToNext}
           </p>
-          {nextLesson && (
-            <Link href={`/${nextLesson.slug}`} className="btn-primary">
-              Continue to Lesson {nextLesson.day} →
-            </Link>
-          )}
+          {nextLesson &&
+            (nextGated ? (
+              <a href="#unlock" className="btn-primary">
+                Unlock Lessons 2–5 →
+              </a>
+            ) : (
+              <Link href={`/${nextLesson.slug}`} className="btn-primary">
+                Continue to Lesson {nextLesson.day} →
+              </Link>
+            ))}
           {!nextLesson && (
             <Link href="/workbook" className="btn-primary">
               Open your workbook →
