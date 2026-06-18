@@ -1,139 +1,180 @@
-# Pinterest Standard Access — Video Demo Guide
+# Pinterest Standard Access — Resubmission Video
 
-**Goal:** record a 90-second screen recording showing the OAuth flow + the main Pinterest features the app uses, then upload it to the Pinterest Developer Portal.
+Pinterest denied the previous request because the video looked like a presentation. The resubmission should be a plain screen recording of the actual OAuth and API workflow.
 
-## What Pinterest is asking for (paraphrased)
+Do not submit the Remotion/demo-video presentation. Record your real screen.
 
-1. Show the OAuth authentication flow.
-2. Show the main Pinterest features the app uses.
-3. Optional voiceover.
+## What the new video must show
 
-## Strategy
+1. The Pinterest Developer app page for `The Sauna Host - Auto Pin & Analytics`.
+2. The OAuth flow launched from `python oauth_helper.py`.
+3. The Pinterest authorization/consent screen and the redirect back to `localhost:8085`.
+4. Authenticated API calls in Terminal:
+   - `GET /user_account`
+   - `GET /boards`
+5. The scheduled pin workflow:
+   - `pin_queue.csv` with curated rows
+   - `post_next.py --dry-run` showing the next pin the app will post
+6. If allowed by the current Pinterest access tier, one live `POST /pins` test pin.
 
-We're going with the **production + code walkthrough** approach instead of trying to demo against Pinterest's sandbox. Reasons:
-- OAuth, listing boards, and pulling analytics all work in production with Trial access — those are legit, recordable demos.
-- Pin creation is blocked in production with Trial, but we don't need to actually post on camera. We narrate what `post_next.py` does and show the queue (`pin_queue.csv`) to demonstrate curated, brand-owned content (a strong "not spam" signal for the reviewer).
-- This avoids spinning up sandbox boards just for a demo.
+The safest video is 2-3 minutes. It should feel like Jack is watching you use the tool, not like he is watching a sales deck.
 
-## Pre-recording setup (5 minutes)
+## Before recording
 
-1. **Close noisy apps** — quit Slack, Mail, anything that might post a notification on screen.
-2. **Set up a clean Terminal window.** Increase font size (⌘+ a few times). Make the window large enough to be readable in a recording.
-3. **Open these in your editor (VS Code or whatever you use)**, ready to switch to:
-   - `pinterest_automation/oauth_helper.py`
-   - `pinterest_automation/pinterest_client.py`
-   - `pinterest_automation/post_next.py`
-   - `pinterest_automation/pin_queue.csv`
-4. **Open Chrome** with `https://developers.pinterest.com/apps/1565235/` in a tab — you may want to show the app overview briefly.
-5. **Pre-stage these terminal commands** as Terminal history (run them once before recording so up-arrow recalls them):
-   ```bash
-   cd "/Users/Patricia1/Documents/Revivery AI Operations (Tricia)/RIT/Sampling Course Bundle/sauna-host-site/pinterest_automation"
-   source .venv/bin/activate
-   python -c "from pinterest_client import PinterestClient; bs=PinterestClient().list_boards(); print(f'{len(bs)} boards on the Sauna Host account:'); [print(f'  {b[\"name\"]}') for b in bs]"
-   python pull_analytics.py
-   wc -l pin_queue.csv
-   ```
+Close Mail, Slack, Messages, and anything with private notifications.
 
-## Recording tool
+Open these windows:
 
-**Cmd+Shift+5** (built into macOS) — pick "Record Selected Portion" and drag a box around your Terminal + browser area. Click "Options" → set "Microphone" to your mic if you want a voiceover. Click Record.
+- Browser tab: `https://developers.pinterest.com/apps/1565235/`
+- Terminal in this folder:
+  ```bash
+  cd "/Users/Patricia1/Documents/Revivery AI Operations (Tricia)/RIT/Sampling Course Bundle/sauna-host-site/pinterest_automation"
+  source .venv/bin/activate
+  ```
+- Editor tabs:
+  - `oauth_helper.py`
+  - `api_review_demo.py`
+  - `post_next.py`
+  - `pin_queue.csv`
 
-Alternatively, **QuickTime Player → File → New Screen Recording** if you prefer.
+Increase Terminal font size so the reviewer can read the commands.
 
-Save as `.mov` or `.mp4`. Pinterest accepts both.
+## Important privacy note
 
-## The 90-second script
+The OAuth helper prints the authorization URL. That is okay. Do not open or show `.env` because it contains the app secret and tokens.
 
-> Read the *italicized* lines as voiceover. Keep voice steady, no need for production polish — Pinterest just needs to understand the use case.
+The helper script `api_review_demo.py` masks token values automatically, so it is safe to record.
 
-### 0:00–0:10 — Title + intro
+## Recording commands
 
-Show your Terminal window, paused.
+Use macOS screen recording:
 
-> *"This is the automated posting tool for The Sauna Host, our business Pinterest account at thesaunahost. The app posts curated wellness content from our own brand library to our own boards on a 9 AM and 3 PM schedule. I'll show you the OAuth flow, the boards it manages, and the analytics pull."*
+`Cmd+Shift+5` → Record Selected Portion → select Browser + Terminal/editor area → Record.
 
-### 0:10–0:45 — OAuth authentication
+### 1. Show the app page
 
-In Terminal, run:
+Show the Pinterest Developer app page for 5-10 seconds.
+
+Say:
+
+> This is the Pinterest Developer app for The Sauna Host. It is used by our business to post our own branded pin content to our own Pinterest boards and pull analytics.
+
+### 2. Run OAuth on camera
+
+In Terminal:
 
 ```bash
 python oauth_helper.py
 ```
 
-> *"Running oauth_helper.py opens Pinterest's authorization page in the browser. The user — me, the account owner — sees the requested scopes: pins read and write, boards read and write, user accounts read for analytics."*
+When the browser opens, show the Pinterest authorization page. Click **Allow**. Show the local success page:
 
-Browser opens. Show the Pinterest consent screen briefly (the scopes are listed there). Click **Allow**.
+`Authorized! You can close this tab and return to your terminal.`
 
-Browser shows "Authorized!" page. Cut back to Terminal.
+Say:
 
-> *"The local callback server captures the auth code, exchanges it for an access token and a refresh token, and saves them to a gitignored .env file. The user only does this once — the client auto-refreshes tokens going forward."*
+> This is the OAuth authentication flow. I am the account owner granting the app permission. Pinterest redirects back to the registered local redirect URI, and the helper exchanges the authorization code for access and refresh tokens.
 
-### 0:45–1:10 — Listing boards (proves auth works against the real account)
+### 3. Show authenticated API calls
 
-In Terminal, run the pre-staged command:
-
-```bash
-python -c "from pinterest_client import PinterestClient; bs=PinterestClient().list_boards(); print(f'{len(bs)} boards on the Sauna Host account:'); [print(f'  {b[\"name\"]}') for b in bs]"
-```
-
-The output lists 9 boards (Sauna Host Tips, Cold Plunge Rituals, etc.).
-
-> *"With the token, the app reads the 9 boards on the Sauna Host account. These are the destinations for our scheduled pins."*
-
-### 1:10–1:25 — Show the content queue (signal of legitimate, curated content)
-
-Switch to your editor showing `pin_queue.csv`. Scroll through 5–6 rows so the reviewer sees the brand-voiced titles and descriptions.
-
-> *"This is our content queue — 40 pins, all brand-owned, paired with images we created or licensed for The Sauna Host. Two posts per day for 20 days. The runner script `post_next.py` reads this CSV, posts the next due row, and writes back the resulting pin ID for tracking."*
-
-Briefly switch to `post_next.py` and scroll the `create_pin` call section.
-
-> *"The post step calls the v5 `/pins` endpoint with board_id, title, description, image_url, link, and alt_text — standard pin creation."*
-
-### 1:25–1:40 — Analytics pull (works in Trial, prove it's a real working app)
-
-Back to Terminal:
+In Terminal:
 
 ```bash
-python pull_analytics.py
+python api_review_demo.py --read-only
 ```
 
-Output shows user-level + per-pin analytics CSVs being written.
+The output should show:
 
-> *"Analytics is the secondary use case — pulling impressions, clicks, and saves into CSVs we can review weekly to inform what content to feature next."*
+- API base
+- App ID
+- masked tokens
+- authenticated account
+- board list
 
-### 1:40–1:50 — Wrap
+Say:
 
-> *"That's the full app — OAuth-authenticated, scheduled posting from a curated content library, and analytics for measurement. We're requesting Standard access to enable the production posting step. The use case is automating our own brand content to our own Pinterest account on a sustainable schedule. Thank you for reviewing."*
+> This confirms the OAuth token is working against the Pinterest API. The app reads the authenticated user account and lists the boards it manages for scheduled posting.
 
-Stop recording.
+### 4. Show the curated queue and posting workflow
 
-## What to write in the application form
+Switch to `pin_queue.csv` and scroll a few rows. The reviewer should see real titles, descriptions, image URLs, links, alt text, blank `posted_at`, and blank `pin_id`.
 
-Most Pinterest Standard-access forms also ask for a written description of your app and use case. Suggested copy:
+Say:
 
-> **App:** The Sauna Host - Auto Pin & Analytics
-> **Use case:** Automated posting of brand-owned wellness content from our business Pinterest account, The Sauna Host (https://thesaunahost.com), associated with Revivery — a social wellness studio in Tampa, FL.
-> **Posting volume:** 2 pins per day, scheduled by a CSV queue we maintain manually. All content is created or licensed by us; no third-party content, no scraping, no spam.
-> **Audience:** Prospects researching contrast therapy, sauna hosting, and wellness gathering ideas. Each pin links back to thesaunahost.com.
-> **Why automation:** consistent daily pinning is what Pinterest rewards. A small business team can't reliably hand-post twice a day; automation lets us maintain consistency while keeping content quality high.
-> **Scopes used:** pins:read, pins:write, boards:read, boards:write, user_accounts:read.
-> **Security:** OAuth tokens stored in a local gitignored .env file. No tokens in source control. Auto-refresh handles expiry.
+> This is our manually curated posting queue. All content is owned or licensed by us and links to thesaunahost.com. We schedule two pins per day, not bulk spam.
 
-## Tips
+Switch to `post_next.py`, showing the `client.create_pin(...)` call.
 
-- **Speak slowly and clearly** — reviewers need to follow without rewinding.
-- **Don't include sensitive screen content** — quit anything with personal info, hide bookmarks bar, close tabs.
-- **Trim the start and end** in QuickTime if there's dead air. Pinterest doesn't want a 3-minute video — keep it 60–120 seconds.
-- **File size** — should be under ~50 MB after compression. If too big, export at 720p instead of 1080p.
+Then run:
 
-## After approval
+```bash
+python post_next.py --dry-run
+```
 
-Pinterest's typical turnaround for Trial → Standard is **1–5 business days**. Once approved, you'll get an email + the app status changes to "Standard" in the developer portal. At that point:
+Say:
 
-1. Re-run `python oauth_helper.py` once more (some scopes may need re-grant under the new tier — easier to re-auth than risk it).
-2. Retry the pin-09 test post — should succeed against production now.
-3. Install + load the launchd plist (instructions in `launchd/README.md`).
-4. The schedule fires Apr 27 at 9 AM, autonomously, through May 16.
+> The scheduled runner reads the CSV, finds the next due row, and calls the Pinterest v5 pins endpoint with the board ID, title, description, image URL, link, and alt text. This dry run shows what will post without creating a duplicate during review.
 
-If the queue's first scheduled date passes while waiting for approval, just bump every `scheduled_date` forward by N days in `pin_queue.csv` (a one-line `sed` or open in a spreadsheet).
+### 5. Optional, only if the API allows it: create one test pin
+
+If Pinterest requires a live pin creation call and your current access tier allows it, run this while recording:
+
+```bash
+python api_review_demo.py --create-test-pin --board-id 1137370149584773409
+```
+
+Say:
+
+> This is a live `POST /pins` call using our own image and our own destination URL. The returned pin ID confirms pin creation through the API.
+
+If it fails because Standard access has not been approved yet, keep the failure visible and say:
+
+> Pin creation is the production permission we are requesting Standard access for. The app is OAuth-authenticated and ready; the read calls work, and this shows the exact API request that will be enabled after approval.
+
+Do not make the whole video about a failed pin creation. The main required proof is OAuth plus API usage.
+
+## Voiceover script
+
+Use this if you want a clean version to read:
+
+> Hi, this is Tricia from Revivery. This screen recording shows our Pinterest API app for The Sauna Host. The app is used only to publish our own brand-owned pin content to our own Pinterest account and pull analytics.
+>
+> First I am running our OAuth helper. It opens Pinterest's authorization page, where I grant the requested permissions as the account owner. Pinterest redirects back to our registered local redirect URI, and the helper exchanges the authorization code for access and refresh tokens.
+>
+> Next I am running authenticated Pinterest API calls. The app reads the user account and lists the boards available on The Sauna Host account. These boards are the destinations for our scheduled pins.
+>
+> This CSV is our curated content queue. It includes the scheduled date and time, board ID, title, description, image URL, destination link, and alt text. The runner posts only the next due pin and writes back the resulting pin ID for tracking.
+>
+> The use case is consistent daily publishing of our own wellness content to our own business Pinterest account, plus weekly analytics review. We do not scrape, repost third-party content, or bulk-spam boards.
+
+## Message to send back to Pinterest
+
+Subject: Standard Access resubmission — screen recording with OAuth flow
+
+Hi Jack,
+
+Thank you for the clarification. I misunderstood the video requirement and previously submitted a presentation-style demo.
+
+I have recorded a new screen recording that shows me using the app directly, including:
+
+- the Pinterest Developer app,
+- the OAuth authorization flow,
+- the localhost redirect/callback,
+- authenticated Pinterest API calls to read the user account and boards,
+- the curated pin queue,
+- and the scheduled posting workflow that calls the Pinterest v5 pins endpoint.
+
+The app is used only to publish The Sauna Host's own brand-owned content to our own Pinterest business account and to pull analytics for that content.
+
+Thank you for reviewing the corrected submission,
+Tricia
+
+## Final checklist before submitting
+
+- The video is a screen recording, not a slide deck or rendered presentation.
+- OAuth authorization screen is visible.
+- The localhost callback success screen is visible.
+- Terminal shows authenticated API output.
+- No `.env`, app secret, access token, or refresh token is visible.
+- The queue shows legitimate, curated business content.
+- The written application says posting volume is 2 pins/day.
