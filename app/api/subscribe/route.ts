@@ -5,7 +5,9 @@ import { getCookieConfig } from "@/lib/auth";
 
 /**
  * POST /api/subscribe
- * Body: { email: string, firstName?: string, theme?: string, source?: string }
+ * Body: { email, firstName?, theme?, source?,
+ *         utmSource?, utmMedium?, utmCampaign?, utmTerm?, utmContent?,
+ *         referrer?, landingPage? }
  *
  * 1. Adds the email to the ESP (Brevo by default; see lib/email.ts)
  * 2. Sets the unlock cookie so Lessons 2–5 and the workbook become accessible
@@ -18,6 +20,13 @@ export async function POST(req: Request) {
       firstName?: string;
       theme?: string;
       source?: string;
+      utmSource?: string;
+      utmMedium?: string;
+      utmCampaign?: string;
+      utmTerm?: string;
+      utmContent?: string;
+      referrer?: string;
+      landingPage?: string;
     };
 
     if (!body.email || !isValidEmail(body.email)) {
@@ -32,6 +41,13 @@ export async function POST(req: Request) {
       firstName: body.firstName?.trim() || undefined,
       theme: body.theme,
       source: body.source || "direct",
+      utmSource: body.utmSource,
+      utmMedium: body.utmMedium,
+      utmCampaign: body.utmCampaign,
+      utmTerm: body.utmTerm,
+      utmContent: body.utmContent,
+      referrer: body.referrer,
+      landingPage: body.landingPage,
     });
 
     if (!result.ok) {

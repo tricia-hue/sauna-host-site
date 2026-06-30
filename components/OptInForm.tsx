@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { readAttribution } from "@/lib/attribution";
 
 type OptInFormProps = {
   variant?: "hero" | "inline" | "mid";
@@ -35,10 +36,11 @@ export default function OptInForm({
     setError("");
 
     try {
+      const attribution = readAttribution();
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, email, source }),
+        body: JSON.stringify({ firstName, email, source, ...attribution }),
       });
 
       if (!res.ok) {
@@ -48,6 +50,11 @@ export default function OptInForm({
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).fbq?.("track", "Lead", { source });
+      // Pinterest conversion (no-ops until the Pinterest tag env var is set).
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).pintrk?.("track", "lead", {
+        lead_type: "sauna_host_course",
+      });
 
       router.push(redirectTo);
       router.refresh();

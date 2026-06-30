@@ -21,6 +21,14 @@ type SubscribeInput = {
   firstName?: string;
   theme?: string;
   source?: string;
+  // Marketing attribution (first-touch). Stored on the Brevo contact.
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmTerm?: string;
+  utmContent?: string;
+  referrer?: string;
+  landingPage?: string;
 };
 
 type SubscribeResult = {
@@ -53,13 +61,22 @@ export async function subscribeToEmailList(
   }
 
   // Build attributes. Brevo attribute names are conventionally UPPERCASE.
-  // FIRSTNAME exists by default; THEME + SOURCE you may need to create once
-  // under Brevo → Contacts → Settings → Contact attributes (as text type).
+  // FIRSTNAME exists by default; the rest you create once under
+  // Brevo → Contacts → Settings → Contact attributes (all as text type):
+  // THEME, SOURCE, UTM_SOURCE, UTM_MEDIUM, UTM_CAMPAIGN, UTM_TERM,
+  // UTM_CONTENT, REFERRER, LANDING_PAGE.
   const attributes: Record<string, string> = {
     SOURCE: input.source || defaultSourceTag,
   };
   if (input.firstName) attributes.FIRSTNAME = input.firstName;
   if (input.theme) attributes.THEME = input.theme;
+  if (input.utmSource) attributes.UTM_SOURCE = input.utmSource;
+  if (input.utmMedium) attributes.UTM_MEDIUM = input.utmMedium;
+  if (input.utmCampaign) attributes.UTM_CAMPAIGN = input.utmCampaign;
+  if (input.utmTerm) attributes.UTM_TERM = input.utmTerm;
+  if (input.utmContent) attributes.UTM_CONTENT = input.utmContent;
+  if (input.referrer) attributes.REFERRER = input.referrer;
+  if (input.landingPage) attributes.LANDING_PAGE = input.landingPage;
 
   try {
     const res = await fetch("https://api.brevo.com/v3/contacts", {

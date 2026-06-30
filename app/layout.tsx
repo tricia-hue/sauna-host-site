@@ -3,11 +3,18 @@ import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import AttributionTracker from "@/components/AttributionTracker";
 
 const FB_PIXEL_ID = "773318260918877";
 
-const siteUrl = "https://revivery.co";
-const pagePath = "/host";
+// Pinterest tag. Set NEXT_PUBLIC_PINTEREST_TAG_ID in Vercel once the Pinterest
+// conversion tag exists (Pinterest → Ads → Conversions). Until it's set, the
+// tag is not injected, so nothing breaks.
+const PINTEREST_TAG_ID = process.env.NEXT_PUBLIC_PINTEREST_TAG_ID;
+
+// thesaunahost.com is the canonical, indexable home for the course.
+const siteUrl = "https://thesaunahost.com";
+const pagePath = "";
 const pageUrl = `${siteUrl}${pagePath}`;
 
 export const metadata: Metadata = {
@@ -66,6 +73,7 @@ const courseJsonLd = {
   "@context": "https://schema.org",
   "@type": "Course",
   name: "The Sauna Host",
+  url: "https://thesaunahost.com",
   description:
     "A free 5-day mini course on hosting a sauna and cold plunge gathering. Learn to host a women's circle, men's gathering, milestone celebration, or book club using the Bio/Psych/Social Method from Revivery Instructor Training.",
   provider: {
@@ -155,6 +163,33 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
+        {PINTEREST_TAG_ID && (
+          <>
+            <Script id="pinterest-tag" strategy="afterInteractive">
+              {`
+                !function(e){if(!window.pintrk){window.pintrk=function(){
+                window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+                n=window.pintrk;n.queue=[],n.version="3.0";var
+                t=document.createElement("script");t.async=!0,t.src=e;var
+                r=document.getElementsByTagName("script")[0];
+                r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+                pintrk('load', '${PINTEREST_TAG_ID}');
+                pintrk('page');
+              `}
+            </Script>
+            <noscript>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                height="1"
+                width="1"
+                style={{ display: "none" }}
+                src={`https://ct.pinterest.com/v3/?event=init&tid=${PINTEREST_TAG_ID}&noscript=1`}
+                alt=""
+              />
+            </noscript>
+          </>
+        )}
+        <AttributionTracker />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

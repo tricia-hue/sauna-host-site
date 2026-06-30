@@ -8,7 +8,7 @@ export const site = {
   tagline: "A free 5-day mini course from Revivery.",
   description:
     "Become the host your friends will remember. Learn to host a sauna and cold plunge gathering — a women's circle, men's gathering, milestone celebration, or book club — using the method we teach in full Revivery Instructor Training.",
-  url: "https://revivery.co/host",
+  url: "https://thesaunahost.com",
 
   // The two URLs that live outside this app
   parentSite: "https://revivery.com",
