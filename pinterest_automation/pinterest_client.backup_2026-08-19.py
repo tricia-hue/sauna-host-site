@@ -137,26 +137,7 @@ class PinterestClient:
                 break
         return boards
 
-
-
-    # --- media helper -------------------------------------------------------
-    def _media_item(self, image_ref: str) -> dict:
-        """Return a media item for a URL (fetched by Pinterest) or a local file
-        (uploaded as base64 — no web deploy needed). Local paths are resolved
-        relative to this folder, e.g. images/b3-01.jpg."""
-        if image_ref.lower().startswith(("http://", "https://")):
-            return {"kind": "url", "url": image_ref}
-        path = Path(image_ref)
-        if not path.is_absolute():
-            path = Path(__file__).parent / path
-        if not path.exists():
-            raise PinterestAPIError(f"local image not found: {path}")
-        content_type = "image/png" if path.suffix.lower() == ".png" else "image/jpeg"
-        data = base64.b64encode(path.read_bytes()).decode()
-        return {"kind": "base64", "content_type": content_type, "data": data}
-
     def create_pin(
-
         self,
         board_id: str,
         title: str,
@@ -170,38 +151,13 @@ class PinterestClient:
         # via multiple_image_urls; image_url is the cover/first slide. Otherwise
         # a normal single-image pin.
         if extra_image_urls:
-            refs = [image_url] + list(extra_image_urls)
-            items = [self._media_item(u) for u in refs[:5]]
-            if all(i["kind"] == "url" for i in items):
-                media_source = {
-                    "source_type": "multiple_image_urls",
-                    "items": [{"url": i["url"]} for i in items],
-                }
-            else:
-                media_source = {
-                    "source_type": "multiple_image_base64",
-                    "items": [
-                        {"content_type": i["content_type"], "data": i["data"]}
-                        if i["kind"] == "base64"
-                        else {
-                            "content_type": "image/jpeg",
-                            "data": base64.b64encode(
-                                requests.get(i["url"], timeout=30).content
-                            ).decode(),
-                        }
-                        for i in items
-                    ],
-                }
+            urls = [image_url] + list(extra_image_urls)
+            media_source = {
+                "source_type": "multiple_image_urls",
+                "items": [{"url": u} for u in urls[:5]],
+            }
         else:
-            item = self._media_item(image_url)
-            if item["kind"] == "url":
-                media_source = {"source_type": "image_url", "url": item["url"]}
-            else:
-                media_source = {
-                    "source_type": "image_base64",
-                    "content_type": item["content_type"],
-                    "data": item["data"],
-                }
+            media_source = {"source_type": "image_url", "url": image_url}
         body = {
             "board_id": board_id,
             "title": title,

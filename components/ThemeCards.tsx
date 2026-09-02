@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { themes } from "@/lib/config";
+import { getHostThemeByConfigId } from "@/content/themes";
 
 export default function ThemeCards() {
   return (
@@ -47,10 +49,12 @@ export default function ThemeCards() {
         <div className="grid md:grid-cols-2 gap-8">
           {themes.map((theme, i) => {
             const isLastAndOdd = i === themes.length - 1 && themes.length % 2 === 1;
+            const hostTheme = getHostThemeByConfigId(theme.id);
             return (
-            <div
+            <Link
               key={theme.id}
-              className={`group overflow-hidden bg-blue-black/40 hover:bg-blue-black/60 transition-colors ${
+              href={hostTheme ? `/host/${hostTheme.slug}` : "#unlock"}
+              className={`group overflow-hidden bg-blue-black/40 hover:bg-blue-black/60 transition-colors block ${
                 isLastAndOdd ? "md:col-span-2" : ""
               }`}
             >
@@ -75,7 +79,7 @@ export default function ThemeCards() {
               {/* Content */}
               <div className="p-10 md:p-12 border-l-2 border-transparent group-hover:border-gold transition-colors">
                 <p className="eyebrow mb-6">Theme 0{i + 1}</p>
-                <h3 className="font-display text-3xl md:text-4xl uppercase tracking-heading text-peach mb-4">
+                <h3 className="font-display text-3xl md:text-4xl uppercase tracking-heading text-peach mb-4 group-hover:text-gold transition-colors">
                   {theme.name}
                 </h3>
                 <p className="text-gold/90 italic text-lg mb-6">
@@ -84,8 +88,13 @@ export default function ThemeCards() {
                 <p className="text-peach/70 leading-relaxed max-w-md">
                   {theme.description}
                 </p>
+                {hostTheme && (
+                  <p className="mt-8 font-display text-xs uppercase tracking-display text-peach/50 group-hover:text-gold transition-colors">
+                    See the full plan &rarr;
+                  </p>
+                )}
               </div>
-            </div>
+            </Link>
             );
           })}
         </div>

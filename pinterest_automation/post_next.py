@@ -111,6 +111,11 @@ def main(limit: int, dry_run: bool) -> int:
     posted = 0
     for r in due[:limit]:
         try:
+            extra = [
+                u.strip()
+                for u in (r.get("extra_images") or "").split(";")
+                if u.strip()
+            ]
             pin = client.create_pin(
                 board_id=r["board_id"],
                 title=r["title"],
@@ -118,11 +123,13 @@ def main(limit: int, dry_run: bool) -> int:
                 image_url=r["image_url"],
                 link=r.get("link") or None,
                 alt_text=r.get("alt_text") or None,
+                extra_image_urls=extra or None,
             )
             r["posted_at"] = datetime.datetime.now().isoformat(timespec="seconds")
             r["pin_id"] = pin["id"]
+            kind = f"carousel({len(extra) + 1})" if extra else "pin"
             log(
-                f"OK   pin={pin['id']} board={r['board_id']} "
+                f"OK   {kind}={pin['id']} board={r['board_id']} "
                 f"title={r['title'][:60]}"
             )
             posted += 1

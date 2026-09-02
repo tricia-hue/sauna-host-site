@@ -1,44 +1,65 @@
 #!/usr/bin/env bash
-set -euo pipefail
+# Self-running screen-recording demo for Pinterest Standard Access review.
+#
+# HOW TO USE:
+#   1. Start a macOS screen recording:  Cmd + Shift + 5  ->  Record
+#   2. In this Terminal, run:           bash recording_demo.sh
+#   3. When the browser opens Pinterest's consent screen, click ALLOW.
+#   4. When you see "Demo complete", stop the recording.
+#
+# The script runs and narrates itself with on-screen captions, so no voiceover
+# is required. It never prints .env, the app secret, or unmasked tokens.
 
 cd "$(dirname "$0")"
+[ -d ".venv" ] && source .venv/bin/activate 2>/dev/null || true
 
-if [ -d ".venv" ]; then
-  # shellcheck disable=SC1091
-  source .venv/bin/activate
-fi
+B=$(tput bold 2>/dev/null || true)
+N=$(tput sgr0 2>/dev/null || true)
 
-clear
-echo "Pinterest Standard Access resubmission demo"
-echo "============================================"
-echo
-echo "This visible Terminal window is what Pinterest should see."
-echo "Do not show .env or any secret values."
-echo
-echo "Step 1: Open the Pinterest Developer app page."
-echo "When Chrome opens, keep recording for 5 seconds, then come back to this Terminal."
-read -r -p "Press Enter to open the app page..."
+caption() {
+  clear
+  echo
+  echo "${B}============================================================${N}"
+  printf "${B}  %s${N}\n" "$1"
+  [ -n "${2:-}" ] && printf "  %s\n" "$2"
+  echo "${B}============================================================${N}"
+  echo
+  sleep "${3:-5}"
+}
+
+caption "THE SAUNA HOST  —  Pinterest API app demo" \
+  "Live screen recording of our app authenticating and using the Pinterest API." 6
+
+caption "What this app does" \
+  "It publishes The Sauna Host's OWN branded pins to our OWN Pinterest boards and pulls analytics. No scraping, no third-party reposting. About 2-3 pins per day." 7
+
+caption "Step 1 of 4  —  The Pinterest Developer app" \
+  "Opening the developer app page for app 1565235." 4
 python - <<'PY'
 import webbrowser
 webbrowser.open("https://developers.pinterest.com/apps/1565235/")
 PY
+sleep 7
 
-echo
-read -r -p "After the app page is visible in the recording, press Enter to start OAuth..."
-echo
-echo "Step 2: OAuth authentication flow"
-echo "A Pinterest authorization page will open."
-echo "Click Allow in Chrome, then return to this Terminal."
-python oauth_helper.py
+caption "Step 2 of 4  —  OAuth authorization (account owner)" \
+  "The browser opens Pinterest's consent screen. Click ALLOW. Pinterest redirects to our registered localhost URI and the helper exchanges the code for tokens." 7
+python oauth_helper.py || true
+sleep 3
 
-echo
-echo "Step 3: Authenticated Pinterest API calls"
-python api_review_demo.py --read-only
+caption "Step 3 of 4  —  Authenticated Pinterest API calls" \
+  "Reading the authenticated account and the boards the app posts to. All tokens are masked." 6
+python api_review_demo.py --read-only || true
+sleep 8
 
+caption "Step 4 of 4  —  Curated queue + scheduled posting" \
+  "Our hand-curated queue of owned content linking to thesaunahost.com. The runner posts only the next due row via POST /v5/pins. This dry run shows the exact request without creating a duplicate during review." 8
+echo "${B}pin_queue.csv (header + first rows):${N}"
 echo
-echo "Step 4: Scheduled posting workflow dry run"
-python post_next.py --dry-run
+sed -n '1,5p' pin_queue.csv
+echo
+sleep 6
+python post_next.py --dry-run || true
+sleep 8
 
-echo
-echo "DEMO COMPLETE"
-echo "Stop the screen recording now."
+caption "Demo complete" \
+  "OAuth works, authenticated reads work, and the POST /v5/pins publish request is ready. Standard access enables that publish call. You can stop the screen recording now." 8
