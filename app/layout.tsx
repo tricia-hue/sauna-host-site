@@ -18,7 +18,7 @@ const pagePath = "";
 const pageUrl = `${siteUrl}${pagePath}`;
 
 export const metadata: Metadata = {
-  title: "The Sauna Host — A free 5-day mini course from Revivery",
+  title: "The Sauna Host — A free 5-day mini course",
   description:
     "Become the host your friends will remember. A free 5-day mini course on hosting a sauna and cold plunge gathering — women's circle, men's gathering, milestone celebration, or book club.",
   metadataBase: new URL(siteUrl),
@@ -38,15 +38,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Sauna Host — A free 5-day mini course",
     description:
-      "A free 5-day mini course from Revivery on hosting a sauna and cold plunge gathering.",
+      "A free 5-day mini course on hosting a sauna and cold plunge gathering.",
     url: pageUrl,
-    siteName: "Revivery",
+    siteName: "The Sauna Host",
     images: [
       {
         url: `${pageUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "The Sauna Host — Revivery",
+        alt: "The Sauna Host",
       },
     ],
     locale: "en_US",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Sauna Host — A free 5-day mini course",
     description:
-      "A free 5-day mini course from Revivery on hosting a sauna and cold plunge gathering.",
+      "A free 5-day mini course on hosting a sauna and cold plunge gathering.",
     images: [`${pageUrl}/og-image.jpg`],
   },
   icons: {
@@ -75,12 +75,11 @@ const courseJsonLd = {
   name: "The Sauna Host",
   url: "https://thesaunahost.com",
   description:
-    "A free 5-day mini course on hosting a sauna and cold plunge gathering. Learn to host a women's circle, men's gathering, milestone celebration, or book club using the Bio/Psych/Social Method from Revivery Instructor Training.",
+    "A free 5-day mini course on hosting a sauna and cold plunge gathering. Learn to host a women's circle, men's gathering, milestone celebration, or book club using the Bio/Psych/Social Method.",
   provider: {
     "@type": "Organization",
-    name: "Revivery",
-    url: "https://revivery.com",
-    sameAs: ["https://revivery.co/instructor-training"],
+    name: "The Sauna Host",
+    url: "https://thesaunahost.com",
   },
   offers: {
     "@type": "Offer",
@@ -102,13 +101,8 @@ const courseJsonLd = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Revivery",
-  url: "https://revivery.com",
-  logo: "https://revivery.com/logo.png",
-  sameAs: [
-    "https://revivery.co/instructor-training",
-    "https://www.instagram.com/reviverytampa",
-  ],
+  name: "The Sauna Host",
+  url: "https://thesaunahost.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Tampa",

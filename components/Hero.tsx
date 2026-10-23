@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Background image — warm, no grayscale overlay */}
       <Image
         src="/images/hero-sauna-group.jpg"
-        alt="Group sauna meditation session at Revivery"
+        alt="Group sauna meditation session"
         fill
         priority
         className="object-cover object-[center_top]"
@@ -30,7 +30,7 @@ export default function Hero() {
       <div className="container-sauna relative z-10">
         <div className="max-w-4xl">
           <p className="eyebrow mb-8 animate-fade-in">
-            A free mini course from Revivery
+            A free 5-day mini course
           </p>
 
           <h1 className="font-display text-display-xl uppercase tracking-heading text-peach leading-none mb-8 animate-fade-up">
@@ -45,7 +45,7 @@ export default function Hero() {
 
           <p className="text-base md:text-lg text-peach/60 max-w-xl leading-relaxed mb-12 animate-fade-up">
             Five days. Five gatherings you can host. One method — the same one we
-            teach the leads at Revivery.
+            teach the leads in our studio.
           </p>
 
           <div className="animate-fade-up">

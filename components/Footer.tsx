@@ -13,16 +13,12 @@ export default function Footer() {
     <footer className="border-t border-peach/10 mt-section">
       <div className="container-sauna py-16 grid md:grid-cols-3 gap-10">
         <div>
-          <Image
-            src="/brand/logo-primary-peach.png"
-            alt="Revivery"
-            width={160}
-            height={36}
-            className="h-8 w-auto mb-6 opacity-95"
-          />
+          <p className="font-display text-lg uppercase tracking-display text-peach mb-6">
+            The Sauna Host
+          </p>
           <p className="text-peach/70 text-sm leading-relaxed max-w-xs">
-            A social wellness studio in Tampa, FL. Guided contrast therapy. Trained
-            leads. The practice, not the product.
+            Guides for sauna and cold plunge at home, from the team behind a
+            sauna and cold plunge studio in Tampa Bay.
           </p>
         </div>
 
@@ -83,7 +79,7 @@ export default function Footer() {
 
       <div className="container-sauna border-t border-peach/10 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-peach/50 text-xs">
-          © {new Date().getFullYear()} Revivery. Tampa, FL. Heat Ice Repeat.
+          © {new Date().getFullYear()} The Sauna Host. Tampa Bay, FL.
         </p>
         <div className="flex gap-6 text-xs text-peach/50">
           <Link href="/privacy" className="hover:text-peach transition-colors">

@@ -103,8 +103,8 @@ export default function ProductPage({ product }: { product: Product }) {
               <p className="eyebrow mb-2">{product.price}</p>
               <p className="text-peach text-lg">{product.name}</p>
               <p className="text-peach/50 text-sm mt-1">
-                {product.format}. From the team at Revivery, a sauna and cold
-                plunge studio in Tampa Bay.
+                {product.format}. From the team behind a sauna and cold plunge
+                studio in Tampa Bay.
               </p>
             </div>
             <BuyButton product={product} />

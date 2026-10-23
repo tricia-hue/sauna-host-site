@@ -35,7 +35,7 @@ export const products: Record<string, Product> = {
     stripeUrl: "https://buy.stripe.com/00w5kC0VaahO5Od9HNdnW00", // LIVE
     thanksPath: "/thanks/hidden-costs-checklist",
     downloadPath: "/downloads/hidden-costs-of-building-a-sauna-r7k2.pdf",
-    downloadName: "Revivery-Hidden-Costs-of-Building-a-Sauna.pdf",
+    downloadName: "The-Sauna-Host-Hidden-Costs-of-Building-a-Sauna.pdf",
     image: "/images/products/hidden-costs.jpg",
     imageAlt: "A backyard barrel sauna on a wooden deck",
     eyebrow: "The $7 checklist",
@@ -71,9 +71,9 @@ export const products: Record<string, Product> = {
     stripeUrl: "https://buy.stripe.com/9B6aEW7jyahOgsR2fldnW01", // LIVE
     thanksPath: "/thanks/hot-climate-guide",
     downloadPath: "/downloads/hot-climate-sauna-guide-m4q9.pdf",
-    downloadName: "Revivery-Hot-Climate-Sauna-Guide.pdf",
+    downloadName: "The-Sauna-Host-Hot-Climate-Sauna-Guide.pdf",
     image: "/images/products/hot-climate-guide.jpg",
-    imageAlt: "A woman in a backyard cold plunge tub surrounded by garden",
+    imageAlt: "A lush tropical garden path lined with palms in Key West, Florida",
     eyebrow: "The $29 guide",
     headline: ["The hot-climate", "sauna guide."],
     subhead:

@@ -19,5 +19,5 @@ export async function GET() {
     secure: cookieConfig.secure,
     sameSite: cookieConfig.sameSite,
   });
-  return NextResponse.redirect(new URL("/lesson-2", "https://revivery.co"));
+  return NextResponse.redirect(new URL("/lesson-2", "https://thesaunahost.com"));
 }

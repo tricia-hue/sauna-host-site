@@ -63,7 +63,7 @@ export default function WorkbookPage() {
           </div>
           <a
             href="/sauna-host-workbook.pdf"
-            download="Revivery-Sauna-Host-Workbook.pdf"
+            download="The-Sauna-Host-Workbook.pdf"
             className="btn-primary whitespace-nowrap"
           >
             Download the workbook →
@@ -138,17 +138,6 @@ export default function WorkbookPage() {
             The single most important thing you can do is host it. Not host the
             perfect one. Just host one.
           </p>
-          <div className="mt-10 flex gap-4 flex-wrap">
-            <Link href="/about" className="btn-secondary">
-              About Revivery
-            </Link>
-            <Link
-              href="https://revivery.co/instructor-training"
-              className="font-display text-xs uppercase tracking-heading text-gold hover:text-peach transition-colors self-center"
-            >
-              The bigger path — RIT →
-            </Link>
-          </div>
         </div>
       </div>
     </article>

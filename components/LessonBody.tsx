@@ -107,7 +107,7 @@ export default function LessonBody({
           — Tricia
           <br />
           <span className="text-peach/40 text-sm not-italic">
-            Tricia Will, Co-Founder, Revivery
+            Tricia Will, The Sauna Host
           </span>
         </div>
       </div>

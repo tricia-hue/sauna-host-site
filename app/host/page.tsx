@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Date night, book club, girls' night, men's night, or a birthday — hosted in the sauna and cold plunge, with the full 90-minute plan for each.",
     url: `${site.url}/host`,
-    siteName: "Revivery",
+    siteName: "The Sauna Host",
     type: "website",
   },
 };

@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "About Revivery | The Sauna Host",
+  title: "About | The Sauna Host",
   description:
-    "A social wellness studio in Tampa, FL. Guided contrast therapy. Trained leads. The practice, not the product.",
+    "The Sauna Host teaches you to host sauna and cold plunge gatherings at home, from the team behind a sauna and cold plunge studio in Tampa Bay.",
 };
 
 export default function AboutPage() {
   return (
     <article className="py-section">
       <div className="container-sauna max-w-prose-wide mx-auto">
-        <p className="eyebrow mb-6">About Revivery</p>
+        <p className="eyebrow mb-6">About The Sauna Host</p>
         <h1 className="font-display text-display-lg uppercase tracking-heading text-peach leading-[1.05] mb-10">
           Heat.<br />
           Ice.<br />
@@ -21,9 +20,9 @@ export default function AboutPage() {
 
         <div className="prose-sauna">
           <p>
-            Revivery is a social wellness studio in Tampa, FL built around guided
-            contrast therapy — sauna, cold plunge, and the practice of doing
-            them together.
+            The Sauna Host comes from the team behind a sauna and cold plunge
+            studio in Tampa Bay, built around guided contrast therapy — sauna,
+            cold plunge, and the practice of doing them together.
           </p>
           <p>
             We train certified leads to facilitate what we call the
@@ -34,15 +33,13 @@ export default function AboutPage() {
 
           <h2>The Sauna Host</h2>
           <p>
-            This course is a consumer-grade taste of that method — simplified,
-            made beautiful, and handed to you free. The full framework lives
-            inside our instructor training. If hosting your own gathering
-            lights something up, that's where you go next.
+            This course is a taste of that method — simplified, made
+            beautiful, and handed to you free.
           </p>
 
           <h2>The Bio/Psych/Social Method</h2>
           <p>
-            Three interwoven domains make up the method we teach at Revivery:
+            Three interwoven domains make up the method we teach:
           </p>
           <ul>
             <li>
@@ -61,22 +58,7 @@ export default function AboutPage() {
               container of safety.
             </li>
           </ul>
-          <p>
-            The Sauna Host samples pieces from each. The full Revivery Instructor
-            Training (REV-1) goes deep on all three — three days in Tampa, plus a
-            twelve-hour online masterclass, plus four assigned books.
-          </p>
-        </div>
-
-        <div className="mt-16 flex flex-wrap gap-4">
-          <a
-            href={site.ritUrl}
-            target="_blank"
-            rel="noopener"
-            className="btn-primary"
-          >
-            Explore Instructor Training →
-          </a>
+          <p>The Sauna Host samples pieces from each.</p>
         </div>
 
         <div className="mt-20 pt-10 border-t border-peach/10">

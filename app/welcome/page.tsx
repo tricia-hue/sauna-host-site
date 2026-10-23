@@ -73,18 +73,7 @@ export default function WelcomePage() {
             looking for a different kind of hang — please send them this link.
           </p>
           <p className="font-display text-gold uppercase tracking-heading mb-8">
-            revivery.co/host
-          </p>
-          <p className="text-peach/60 text-sm">
-            In Tampa?{" "}
-            <a
-              href={site.parentSite}
-              target="_blank"
-              rel="noopener"
-              className="underline underline-offset-4 hover:text-gold transition-colors"
-            >
-              Come sit with us at Revivery →
-            </a>
+            thesaunahost.com
           </p>
           <p className="mt-10 italic text-peach/80">
             See you in your inbox.

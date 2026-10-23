@@ -91,7 +91,7 @@ export const hostThemes: HostTheme[] = [
     playlist: "Khruangbin, Men I Trust, Nick Drake, Beach House. Warm, intimate, slow.",
     image: "/images/couples.jpg",
     imageAlt:
-      "A couple moving together between the sauna and cold plunge at Revivery",
+      "A couple moving together between the sauna and cold plunge",
   },
 
   {
@@ -132,7 +132,7 @@ export const hostThemes: HostTheme[] = [
     playlist:
       "Max Richter, quiet Sufjan Stevens, rain recordings. Keep it low. The book is the star.",
     image: "/images/cohort-briefing.jpg",
-    imageAlt: "A small group gathered in conversation at Revivery",
+    imageAlt: "A small group gathered in conversation",
   },
 
   {
@@ -255,7 +255,7 @@ export const hostThemes: HostTheme[] = [
     playlist:
       "Hermanos Gutierrez, mellow Khruangbin, Daniel Caesar, with one celebratory track saved for the close.",
     image: "/images/events-connection.jpg",
-    imageAlt: "A celebratory moment at Revivery",
+    imageAlt: "A celebratory moment",
   },
 ];
 

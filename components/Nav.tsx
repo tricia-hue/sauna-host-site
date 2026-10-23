@@ -32,18 +32,9 @@ export default function Nav() {
         <Link
           href="/"
           className="flex items-center gap-4 group"
-          aria-label="The Sauna Host — a free mini course from Revivery"
+          aria-label="The Sauna Host — home"
         >
-          <Image
-            src="/brand/logo-primary-peach.png"
-            alt="Revivery"
-            width={120}
-            height={28}
-            priority
-            className="h-6 md:h-7 w-auto opacity-95 group-hover:opacity-100 transition-opacity"
-          />
-          <span className="hidden sm:inline-block w-px h-4 bg-peach/30" aria-hidden />
-          <span className="font-display text-xs uppercase tracking-display text-peach/80 group-hover:text-gold transition-colors">
+          <span className="font-display text-sm md:text-base uppercase tracking-display text-peach group-hover:text-gold transition-colors">
             The Sauna Host
           </span>
         </Link>

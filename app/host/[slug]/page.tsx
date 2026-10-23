@@ -25,7 +25,7 @@ export function generateMetadata({ params }: Props): Metadata {
       title: theme.seoTitle,
       description: theme.seoDescription,
       url,
-      siteName: "Revivery",
+      siteName: "The Sauna Host",
       type: "article",
       images: [{ url: `${site.url}${theme.image}`, alt: theme.imageAlt }],
     },
@@ -175,7 +175,7 @@ export default function ThemePage({ params }: Props) {
           </h2>
           <p className="text-peach/60 mb-12 max-w-xl leading-relaxed">
             This is the whole shape of the evening, start to finish. It's the
-            same structure a trained Revivery lead runs in the studio, sized for
+            same structure a trained lead runs in our studio, sized for
             a home sauna and {theme.groupSize.toLowerCase()}.
           </p>
 

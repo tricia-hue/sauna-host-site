@@ -5,9 +5,9 @@
 
 export const site = {
   name: "The Sauna Host",
-  tagline: "A free 5-day mini course from Revivery.",
+  tagline: "A free 5-day mini course.",
   description:
-    "Become the host your friends will remember. Learn to host a sauna and cold plunge gathering — a women's circle, men's gathering, milestone celebration, or book club — using the method we teach in full Revivery Instructor Training.",
+    "Become the host your friends will remember. Learn to host a sauna and cold plunge gathering — a women's circle, men's gathering, milestone celebration, or book club — using the method we teach the leads in our studio.",
   url: "https://thesaunahost.com",
 
   // The two URLs that live outside this app
@@ -56,7 +56,7 @@ export const themes = [
     description:
       "4–8 people. A birthday, a bachelorette, an anniversary, a big transition — marked in a way people remember.",
     image: "/images/events-connection.jpg",
-    imageAlt: "A celebratory moment at Revivery",
+    imageAlt: "A celebratory moment",
   },
   {
     id: "book-club",
@@ -65,7 +65,7 @@ export const themes = [
     description:
       "4–6 people. The gathering where the contrast therapy is what gets the conversation past plot summary.",
     image: "/images/cohort-briefing.jpg",
-    imageAlt: "A small group gathered in conversation at Revivery",
+    imageAlt: "A small group gathered in conversation",
   },
   {
     id: "couples",
@@ -74,7 +74,7 @@ export const themes = [
     description:
       "2 couples or 3. The together-practice that rebuilds presence — contrast therapy as the conversation starter most relationships have been missing.",
     image: "/images/couples.jpg",
-    imageAlt: "A couple moving together between the sauna and cold plunge at Revivery",
+    imageAlt: "A couple moving together between the sauna and cold plunge",
   },
 ];
 
@@ -93,7 +93,7 @@ export const faq = [
   },
   {
     q: "Do I need to be a wellness instructor or have training?",
-    a: "No. The course is specifically for non-professionals. If you already have training or are a certified instructor, you might want to look at our full Revivery Instructor Training — but this mini course is a great sample of how we teach.",
+    a: "No. The course is specifically for non-professionals. If you already have training, it's still a useful sample of how we teach.",
   },
   {
     q: "How long does it take?",
