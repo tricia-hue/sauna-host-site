@@ -3,6 +3,7 @@ import WhySection from "@/components/WhySection";
 import CurriculumOutline from "@/components/CurriculumOutline";
 import ThemeCards from "@/components/ThemeCards";
 import AboutRevivery from "@/components/AboutRevivery";
+import GuidesSection from "@/components/GuidesSection";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 
@@ -14,6 +15,7 @@ export default function HomePage() {
       <CurriculumOutline />
       <ThemeCards />
       <AboutRevivery />
+      <GuidesSection />
       <FAQ />
       <FinalCTA />
     </>

@@ -10,9 +10,9 @@ import { site } from "@/lib/config";
  * obvious outcome — even when the user is already near the top of the page.
  */
 function focusEmailInput(e: React.MouseEvent<HTMLAnchorElement>) {
-  e.preventDefault();
   const el = document.getElementById("email-input") as HTMLInputElement | null;
-  if (!el) return;
+  if (!el) return; // not on the homepage: follow the link to /#start
+  e.preventDefault();
   el.scrollIntoView({ behavior: "smooth", block: "center" });
   // Wait for scroll to settle before focusing (prevents iOS jump-and-snap)
   window.setTimeout(() => el.focus({ preventScroll: true }), 450);
@@ -39,23 +39,14 @@ export default function Nav() {
           </span>
         </Link>
         <nav className="hidden md:flex items-center gap-10">
-          <Link
-            href="/#curriculum"
-            className="font-display text-xs uppercase tracking-heading text-peach/70 hover:text-peach transition-colors"
-          >
-            Curriculum
+          <Link href="/" className="font-display text-xs uppercase tracking-heading text-peach/70 hover:text-peach transition-colors">
+            Free Course
           </Link>
-          <Link
-            href="/#themes"
-            className="font-display text-xs uppercase tracking-heading text-peach/70 hover:text-peach transition-colors"
-          >
-            Themes
+          <Link href="/host" className="font-display text-xs uppercase tracking-heading text-peach/70 hover:text-peach transition-colors">
+            Gatherings
           </Link>
-          <Link
-            href="/#faq"
-            className="font-display text-xs uppercase tracking-heading text-peach/70 hover:text-peach transition-colors"
-          >
-            FAQ
+          <Link href="/guides" className="font-display text-xs uppercase tracking-heading text-peach/70 hover:text-peach transition-colors">
+            Guides
           </Link>
           <Link
             href="/#start"
@@ -63,6 +54,14 @@ export default function Nav() {
             className="font-display text-xs uppercase tracking-heading text-gold hover:text-peach transition-colors"
           >
             Start free →
+          </Link>
+        </nav>
+        <nav className="flex md:hidden items-center gap-5">
+          <Link href="/" className="font-display text-xs uppercase tracking-heading text-peach/70 hover:text-peach transition-colors">
+            Course
+          </Link>
+          <Link href="/guides" className="font-display text-xs uppercase tracking-heading text-peach/70 hover:text-peach transition-colors">
+            Guides
           </Link>
         </nav>
       </div>

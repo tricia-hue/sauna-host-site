@@ -23,22 +23,30 @@ export default function Footer() {
         </div>
 
         <div className="md:text-center">
-          <p className="eyebrow mb-4">The course</p>
+          <p className="eyebrow mb-4">Explore</p>
           <ul className="space-y-2 text-sm">
             <li>
               <Link
                 href="/#curriculum"
                 className="text-peach/70 hover:text-peach transition-colors"
               >
-                The 5 lessons
+                The free 5-day course
               </Link>
             </li>
             <li>
               <Link
-                href="/#themes"
+                href="/host"
                 className="text-peach/70 hover:text-peach transition-colors"
               >
-                Five themes
+                Gatherings
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/guides"
+                className="text-peach/70 hover:text-peach transition-colors"
+              >
+                Sauna guides
               </Link>
             </li>
             <li>
