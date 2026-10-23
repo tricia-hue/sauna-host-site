@@ -23,6 +23,14 @@ export type Product = {
   inside: { title: string; text: string }[];
   forWho: string[];
   crossSell?: string;
+  preview: {
+    headline: string;
+    intro: string;
+    tips: { label: string; title: string; text: string }[];
+    lockedIntro: string;
+    locked: string[];
+    pages: { src: string; alt: string }[];
+  };
 };
 
 export const products: Record<string, Product> = {
@@ -61,6 +69,41 @@ export const products: Record<string, Product> = {
       "You want a real number before you commit",
     ],
     crossSell: "hot-climate-guide",
+    preview: {
+      headline: "Three costs that catch almost everyone.",
+      intro:
+        "The checklist covers 41 line items across 8 categories. Here are three of them, free.",
+      tips: [
+        {
+          label: "Electrical",
+          title: "Check your panel before you buy a heater.",
+          text: "A traditional sauna heater needs its own 240V circuit, usually 30–50A. Many homes built before 1990 have 60A or 100A panels, and builders report upgrades at $2,000–4,000. That's before a single board is cut.",
+        },
+        {
+          label: "Interior",
+          title: "Don't use laminate or vinyl flooring.",
+          text: "Heat warps it and the adhesive gives off fumes. One builder's laminate floor warped within three weeks. Tile, sealed concrete or removable duckboards hold up.",
+        },
+        {
+          label: "Ongoing",
+          title: "What it costs to run, in one line of math.",
+          text: "Heater kW × hours × your rate per kWh. A 6 kW heater running a full hour at $0.15 per kWh costs about $0.90 at most, and heaters cycle, so real use is usually lower.",
+        },
+      ],
+      lockedIntro: "Inside the full checklist:",
+      locked: [
+        "The 6 electrical line items most DIY budgets leave out",
+        "Why you should measure every gate and doorway before ordering a kit",
+        "The vapor barrier shortcut that leads to $5,000+ mold repairs",
+        "What to check with your city, county, HOA and insurer before you buy materials",
+        "The 20% contingency rule, and why installs run 30–50% over equipment",
+        "A fill-in budget worksheet: estimate, quote and actual for every category",
+      ],
+      pages: [
+        { src: "/images/products/hidden-costs-preview-1.jpg", alt: "Preview of the checklist's electrical and site pages" },
+        { src: "/images/products/hidden-costs-preview-2.jpg", alt: "Preview of the checklist's walls, heater and interior pages" },
+      ],
+    },
   },
   "hot-climate-guide": {
     slug: "hot-climate-guide",
@@ -96,5 +139,42 @@ export const products: Record<string, Product> = {
       "You want it to last without fighting mold",
     ],
     crossSell: "hidden-costs",
+    preview: {
+      headline: "Three things northern sauna plans never tell you.",
+      intro:
+        "Most sauna advice is written for Finland and Minnesota. Here's a taste of what changes in Florida, free.",
+      tips: [
+        {
+          label: "Placement",
+          title: "The sun can push your exterior walls to 130–140°F.",
+          text: "Direct afternoon sun ages wood, seals and finishes fast. Siting the sauna in afternoon shade, or under a reflective metal roof, is the cheapest fix you'll ever make.",
+        },
+        {
+          label: "Walls",
+          title: "Never add a second vapor barrier on the outside.",
+          text: "In humid climates moisture pushes into walls from outside. Two barriers trap it between them, which is exactly how hidden mold starts. Your wall has to dry in both directions.",
+        },
+        {
+          label: "Care",
+          title: "Bake it dry after the last session.",
+          text: "Leave the heater on for 10–15 minutes with the door cracked and both vents open. Mold needs moisture, warmth and time, and this takes away the time.",
+        },
+      ],
+      lockedIntro: "Inside the full guide:",
+      locked: [
+        "The 7-layer wall, from paneling to siding, that dries in both directions",
+        "The vent layout most first builds get wrong (and the cold feet it causes)",
+        "Which exterior woods last in humidity, and which need re-oiling every 1–2 years",
+        "How to keep termites out of the footings, year-round",
+        "Why electric heaters beat wood-burning in humid climates",
+        "The full mold-proof routine: after each session, monthly and yearly",
+        "3 ways to cool down between rounds when it's 85°F outside",
+        "A before-you-build checklist: flood zone, HOA, permits and panel",
+      ],
+      pages: [
+        { src: "/images/products/hot-climate-preview-1.jpg", alt: "Preview of the guide's wall-building section" },
+        { src: "/images/products/hot-climate-preview-2.jpg", alt: "Preview of the guide's materials and heater sections" },
+      ],
+    },
   },
 };
